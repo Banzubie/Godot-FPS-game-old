@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://guskpte1s63u"]
+[gd_scene load_steps=9 format=3 uid="uid://guskpte1s63u"]
 
-[ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_t71jc"]
+[ext_resource type="PackedScene" uid="uid://xjks5ln0fs4p" path="res://player.tscn" id="1_c80ob"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_go8o1"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -17,10 +17,6 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40tnq"]
 albedo_color = Color(0.513726, 0.941176, 0.384314, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_5yn2q"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qeup4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_id6n2"]
 albedo_color = Color(0.415686, 0.529412, 0.894118, 1)
@@ -46,21 +42,7 @@ use_collision = true
 size = Vector3(40, 0.002, 40)
 metadata/_edit_group_ = true
 
-[node name="Player" type="CharacterBody3D" parent="."]
-script = ExtResource("1_t71jc")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_5yn2q")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_qeup4")
-
-[node name="Head" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49151, 0)
-
-[node name="Camera3D" type="Camera3D" parent="Player/Head"]
+[node name="Player" parent="." instance=ExtResource("1_c80ob")]
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1.53736, 0)

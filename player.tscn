@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://xjks5ln0fs4p"]
+
+[ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_pwl84"]
+[ext_resource type="PackedScene" uid="uid://ebpvtlurq4fc" path="res://models/weapons/blasterI.glb" id="2_dxxtd"]
+[ext_resource type="PackedScene" uid="uid://bn2ph6o088eqi" path="res://models/weapons/blasterN.glb" id="3_5ytwo"]
+[ext_resource type="PackedScene" uid="uid://b4lav6bjjcw46" path="res://models/weapons/blasterD.glb" id="4_q1qnf"]
+[ext_resource type="PackedScene" uid="uid://ctlbfasa80sr4" path="res://models/weapons/blasterE.glb" id="5_t3eef"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5yn2q"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qeup4"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_pwl84")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_5yn2q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+shape = SubResource("CapsuleShape3D_qeup4")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49151, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="Weapons_manager" type="Node3D" parent="Head/Camera3D"]
+
+[node name="FPS_rig" type="Node3D" parent="Head/Camera3D/Weapons_manager"]
+
+[node name="blasterI" parent="Head/Camera3D/Weapons_manager/FPS_rig" instance=ExtResource("2_dxxtd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75373, 0)
+
+[node name="blasterN" parent="Head/Camera3D/Weapons_manager/FPS_rig" instance=ExtResource("3_5ytwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75373, 0)
+
+[node name="blasterD" parent="Head/Camera3D/Weapons_manager/FPS_rig" instance=ExtResource("4_q1qnf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75373, 0)
+
+[node name="blasterE" parent="Head/Camera3D/Weapons_manager/FPS_rig" instance=ExtResource("5_t3eef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75373, 0)
