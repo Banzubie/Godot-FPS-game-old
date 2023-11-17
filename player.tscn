@@ -228,8 +228,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_fyad3"]
 resource_name = "blasterE shoot"
-length = 0.3
-loop_mode = 1
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -365,7 +364,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_xmmtf"]
 resource_name = "blasterN Shoot"
 length = 0.15
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -373,10 +371,10 @@ tracks/0/path = NodePath("blasterN:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(0.757859, 0.757859),
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(0.757859, 0.757859, 1),
 "update": 0,
-"values": [Vector3(0.0515757, -0.230735, -0.458814), Vector3(0.0515757, -0.230735, -0.458814)]
+"values": [Vector3(0.0515757, -0.230735, -0.458814), Vector3(0.0515757, -0.230735, -0.458814), Vector3(0.0515757, -0.230735, -0.458814)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -385,10 +383,10 @@ tracks/1/path = NodePath("blasterN:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(0.757859, 0.757859),
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(0.757859, 0.757859, 1),
 "update": 0,
-"values": [Vector3(0, -3.14159, 0), Vector3(-0.0759393, -3.14159, -1.14886e-08)]
+"values": [Vector3(0, -3.14159, 0), Vector3(-0.0759393, -3.14159, -1.14886e-08), Vector3(-0.0759393, -3.14159, -1.14886e-08)]
 }
 
 [sub_resource type="Animation" id="Animation_seorh"]

@@ -72,8 +72,29 @@ func _on_animation_player_animation_finished(anim_name):
 	if anim_name == Current_Weapon.Deactivate_anim:
 		Change_Weapon(Next_Weapon)
 		
+	if anim_name == Current_Weapon.Shoot_anim && Current_Weapon.Auto_fire == true:
+		if Input.is_action_pressed("Shoot"):
+			shoot()
+		
 func shoot():
-	Animation_Player.play(Current_Weapon.Shoot_anim)
+	if Current_Weapon.Current_ammo > 0:
+		if !Animation_Player.is_playing():
+			Animation_Player.play(Current_Weapon.Shoot_anim)
+			Current_Weapon.Current_ammo -= 1
+			emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Reserve_ammo])
+	else:
+		reload()
 	
 func reload():
-	Animation_Player.play(Current_Weapon.Reload_anim)
+	if Current_Weapon.Current_ammo == Current_Weapon.Magazine:
+		return
+	elif !Animation_Player.is_playing():
+		if Current_Weapon.Reserve_ammo != 0:
+			Animation_Player.play(Current_Weapon.Reload_anim)
+			var Reload_Amount = min(Current_Weapon.Magazine - Current_Weapon.Current_ammo, Current_Weapon.Magazine,Current_Weapon.Reserve_ammo)
+			Current_Weapon.Current_ammo += Reload_Amount
+			Current_Weapon.Reserve_ammo -= Reload_Amount
+			emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Reserve_ammo])
+		else:
+			Animation_Player.play(Current_Weapon.OOA_anim)
+	

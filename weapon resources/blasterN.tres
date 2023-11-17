@@ -14,4 +14,4 @@ Current_ammo = 25
 Reserve_ammo = 25
 Magazine = 25
 Max_Ammo = 50
-Auto_fire = false
+Auto_fire = true
