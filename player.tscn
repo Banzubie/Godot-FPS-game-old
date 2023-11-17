@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://xjks5ln0fs4p"]
+[gd_scene load_steps=25 format=3 uid="uid://xjks5ln0fs4p"]
 
 [ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_pwl84"]
 [ext_resource type="Script" path="res://HUD.gd" id="2_csxt6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Weapons_manager.gd" id="2_fssy8"]
 [ext_resource type="PackedScene" uid="uid://bn2ph6o088eqi" path="res://models/weapons/blasterN.glb" id="3_5ytwo"]
 [ext_resource type="Resource" uid="uid://tnh0kdgebdw6" path="res://weapon resources/blasterE.tres" id="3_cimga"]
+[ext_resource type="Texture2D" uid="uid://bdfk2yvep8cnl" path="res://ex8erdhiq3d81.webp" id="3_kgs05"]
 [ext_resource type="Resource" uid="uid://bv2jnbr6rxuly" path="res://weapon resources/blasterN.tres" id="4_ldhnm"]
 [ext_resource type="PackedScene" uid="uid://b4lav6bjjcw46" path="res://models/weapons/blasterD.glb" id="4_q1qnf"]
 [ext_resource type="PackedScene" uid="uid://ctlbfasa80sr4" path="res://models/weapons/blasterE.glb" id="5_t3eef"]
@@ -92,7 +93,6 @@ tracks/5/keys = {
 [sub_resource type="Animation" id="Animation_crrja"]
 resource_name = "blasterE OOA"
 length = 0.4
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -471,6 +471,15 @@ text = "Weapon Stack:"
 
 [node name="WeaponStack" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_kgs05")
+stretch_mode = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
