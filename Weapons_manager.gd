@@ -5,6 +5,7 @@ signal Update_Ammo
 signal Update_Weapon_Stack
 
 @onready var Animation_Player = get_node("%AnimationPlayer")
+@onready var Bullet_point = get_node("%Bullet_point")
 
 var Current_Weapon = null
 
@@ -20,6 +21,8 @@ var Weapon_List = {}
 
 
 @export var Start_Weapons: Array[String]
+
+enum {NULL, HITSCAN, PROJECTILE}
 
 func _ready():
 	Initialize(Start_Weapons)
@@ -82,6 +85,14 @@ func shoot():
 			Animation_Player.play(Current_Weapon.Shoot_anim)
 			Current_Weapon.Current_ammo -= 1
 			emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Reserve_ammo])
+			var Camera_Collision = Get_Camera_Collison()
+			match Current_Weapon.Type:
+				NULL:
+					print("Weapon Type not chosen")
+				HITSCAN: 
+					pass
+				PROJECTILE:
+					pass
 	else:
 		reload()
 	
@@ -97,4 +108,28 @@ func reload():
 			emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Reserve_ammo])
 		else:
 			Animation_Player.play(Current_Weapon.OOA_anim)
+	
+	
+func Get_Camera_Collison()->Vector3:
+	var camera = get_viewport().get_camera_3d()
+	var viewport = get_viewport().get_size()
+	
+	var Ray_Origin = camera.project_ray_origin(viewport/2)
+	var Ray_End = Ray_Origin + camera.project_local_ray_normal(viewport/2) * Current_Weapon.Weapon_range
+	var New_Intersection = PhysicsRayQueryParameters3D.create(Ray_Origin, Ray_End)
+	
+	var Intersection = get_world_3d().direct_space_state.intersect_ray(New_Intersection)
+	
+	
+	if not Intersection.is_empty():
+		var Col_Point = Intersection.position
+		return Col_Point
+	else:
+		return Ray_End
+		
+func Hitscan_Collision(Col_point):
+	var Bullet_direction = (Col_point - Bullet_point.get_global_transform().origin).normalized()
+	
+	
+	
 	

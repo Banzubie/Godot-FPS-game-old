@@ -89,10 +89,23 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector3(0, -0.75373, 0)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Bullet_point:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.198839, -0.1559, -0.671156)]
+}
 
 [sub_resource type="Animation" id="Animation_crrja"]
 resource_name = "blasterE OOA"
 length = 0.4
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -157,6 +170,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(0, -0.75373, 0), Vector3(0.198769, -0.25282, -0.726908)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bullet_point:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.413225, -0.174886, -1.25088)]
+}
 
 [sub_resource type="Animation" id="Animation_rason"]
 resource_name = "blasterE deactivate"
@@ -196,6 +221,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bullet_point:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.413225, -0.174886, -1.25088)]
 }
 
 [sub_resource type="Animation" id="Animation_dp2qu"]
@@ -293,6 +330,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(0, 3.14159, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bullet_point:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.198839, -0.1559, -0.671156)]
+}
 
 [sub_resource type="Animation" id="Animation_6p2jd"]
 resource_name = "blasterN Deactivate"
@@ -332,6 +381,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, -3.14159, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bullet_point:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.198839, -0.1559, -0.671156)]
 }
 
 [sub_resource type="Animation" id="Animation_34jy4"]
@@ -524,6 +585,9 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_lqmqn")
 }
+
+[node name="Bullet_point" type="Marker3D" parent="Head/Camera3D/Weapons_manager/FPS_rig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.198839, -0.1559, -0.671156)
 
 [connection signal="Update_Ammo" from="Head/Camera3D/Weapons_manager" to="CanvasLayer" method="_on_weapons_manager_update_ammo"]
 [connection signal="Update_Weapon_Stack" from="Head/Camera3D/Weapons_manager" to="CanvasLayer" method="_on_weapons_manager_update_weapon_stack"]
