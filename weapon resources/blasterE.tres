@@ -17,4 +17,4 @@ Max_Ammo = 15
 Auto_fire = false
 Type = 2
 Weapon_range = 2000
-Damage = 0
+Damage = 1

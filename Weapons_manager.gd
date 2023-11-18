@@ -7,6 +7,8 @@ signal Update_Weapon_Stack
 @onready var Animation_Player = get_node("%AnimationPlayer")
 @onready var Bullet_point = get_node("%Bullet_point")
 
+var Debug_bullet = preload("res://bullet_debug.tscn")
+
 var Current_Weapon = null
 
 var Weapon_Stack = []
@@ -90,7 +92,7 @@ func shoot():
 				NULL:
 					print("Weapon Type not chosen")
 				HITSCAN: 
-					pass
+					Hitscan_Collision(Camera_Collision)
 				PROJECTILE:
 					pass
 	else:
@@ -115,7 +117,7 @@ func Get_Camera_Collison()->Vector3:
 	var viewport = get_viewport().get_size()
 	
 	var Ray_Origin = camera.project_ray_origin(viewport/2)
-	var Ray_End = Ray_Origin + camera.project_local_ray_normal(viewport/2) * Current_Weapon.Weapon_range
+	var Ray_End = Ray_Origin + camera.project_ray_normal(viewport/2) * Current_Weapon.Weapon_range
 	var New_Intersection = PhysicsRayQueryParameters3D.create(Ray_Origin, Ray_End)
 	
 	var Intersection = get_world_3d().direct_space_state.intersect_ray(New_Intersection)
@@ -129,6 +131,21 @@ func Get_Camera_Collison()->Vector3:
 		
 func Hitscan_Collision(Col_point):
 	var Bullet_direction = (Col_point - Bullet_point.get_global_transform().origin).normalized()
+	var New_Intersection = PhysicsRayQueryParameters3D.create(Bullet_point.get_global_transform().origin, Col_point+Bullet_direction*2)
+	
+	var Bullet_col = get_world_3d().direct_space_state.intersect_ray(New_Intersection)
+	
+	if Bullet_col:
+		var Hit_indicator = Debug_bullet.instantiate()
+		var world = get_tree().get_root()
+		world.add_child(Hit_indicator)
+		Hit_indicator.global_translate(Bullet_col.position)
+		Hitscan_Damage(Bullet_col.collider)
+		
+func Hitscan_Damage(Collider):
+	if Collider.is_in_group("Target") and Collider.has_method("Hit_sucessful"):
+		Collider.Hit_sucessful(Current_Weapon.Damage)
+		
 	
 	
 	

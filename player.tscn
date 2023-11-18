@@ -587,6 +587,7 @@ libraries = {
 }
 
 [node name="Bullet_point" type="Marker3D" parent="Head/Camera3D/Weapons_manager/FPS_rig"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.198839, -0.1559, -0.671156)
 
 [connection signal="Update_Ammo" from="Head/Camera3D/Weapons_manager" to="CanvasLayer" method="_on_weapons_manager_update_ammo"]
