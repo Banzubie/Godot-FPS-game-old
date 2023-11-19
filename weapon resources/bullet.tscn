@@ -67,9 +67,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ublxs")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8fkj7"]
-radius = 0.0316312
-height = 0.436152
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_v35tc"]
+height = 0.460079
+radius = 0.0520038
 
 [node name="Bullet" type="RigidBody3D"]
 collision_layer = 4
@@ -87,7 +87,7 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_8fkj7")
+shape = SubResource("CylinderShape3D_v35tc")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
