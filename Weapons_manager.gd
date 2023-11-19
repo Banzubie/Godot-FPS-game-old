@@ -137,7 +137,7 @@ func Hitscan_Collision(Col_point):
 	
 	if Bullet_col:
 		var Hit_indicator = Debug_bullet.instantiate()
-		var world = get_tree().get_root()
+		var world = get_tree().get_root().get_child(0)
 		world.add_child(Hit_indicator)
 		Hit_indicator.global_translate(Bullet_col.position)
 		Hitscan_Damage(Bullet_col.collider)
