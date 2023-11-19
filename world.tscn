@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://guskpte1s63u"]
+[gd_scene load_steps=11 format=3 uid="uid://guskpte1s63u"]
 
 [ext_resource type="PackedScene" uid="uid://xjks5ln0fs4p" path="res://player.tscn" id="1_c80ob"]
 [ext_resource type="PackedScene" uid="uid://cq7c48kyl5ga4" path="res://box_1.tscn" id="2_22cbd"]
+[ext_resource type="PackedScene" uid="uid://b6n8teecwbsy0" path="res://target.tscn" id="3_fdkf3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_go8o1"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -95,3 +96,65 @@ size = Vector3(5, 2, 5)
 
 [node name="Box1" parent="." instance=ExtResource("2_22cbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, -8)
+
+[node name="Static_targets" type="Node3D" parent="."]
+
+[node name="target" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.46925, 5, -0.376531)
+
+[node name="target2" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.46925, 5, 0.261831)
+
+[node name="target3" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.46925, 5, 0.735529)
+
+[node name="target4" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.46925, 4.45598, -0.376531)
+
+[node name="target5" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.46925, 4, -0.376531)
+
+[node name="target6" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.46925, 5, 1.23651)
+
+[node name="target7" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.46925, 5, 1.87487)
+
+[node name="target8" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.46925, 5, 2.34857)
+
+[node name="target9" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.46925, 4.45598, 1.23651)
+
+[node name="target10" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.46925, 4, 1.23651)
+
+[node name="target11" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(-0.00495675, 0, 0.999988, 0, 1, 0, -0.999988, 0, -0.00495675, -5.25862, 5, -1.10086)
+
+[node name="target12" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(-0.00495675, 0, 0.999988, 0, 1, 0, -0.999988, 0, -0.00495675, -4.62027, 5, -1.10403)
+
+[node name="target13" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(-0.00495675, 0, 0.999988, 0, 1, 0, -0.999988, 0, -0.00495675, -4.14657, 5, -1.10637)
+
+[node name="target14" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(-0.00495675, 0, 0.999988, 0, 1, 0, -0.999988, 0, -0.00495675, -5.25862, 4.45598, -1.10086)
+
+[node name="target15" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(-0.00495675, 0, 0.999988, 0, 1, 0, -0.999988, 0, -0.00495675, -5.25862, 4, -1.10086)
+
+[node name="target16" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(-0.00495675, 0, 0.999988, 0, 1, 0, -0.999988, 0, -0.00495675, -7.28857, 5, -1.10086)
+
+[node name="target17" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(-0.00495675, 0, 0.999988, 0, 1, 0, -0.999988, 0, -0.00495675, -6.65021, 5, -1.10403)
+
+[node name="target18" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(-0.00495675, 0, 0.999988, 0, 1, 0, -0.999988, 0, -0.00495675, -6.17652, 5, -1.10637)
+
+[node name="target19" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(-0.00495675, 0, 0.999988, 0, 1, 0, -0.999988, 0, -0.00495675, -7.28857, 4.45598, -1.10086)
+
+[node name="target20" parent="Static_targets" instance=ExtResource("3_fdkf3")]
+transform = Transform3D(-0.00495675, 0, 0.999988, 0, 1, 0, -0.999988, 0, -0.00495675, -7.28857, 4, -1.10086)
