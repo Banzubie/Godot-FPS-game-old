@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Weapon_Resource" load_steps=2 format=3 uid="uid://tnh0kdgebdw6"]
+[gd_resource type="Resource" script_class="Weapon_Resource" load_steps=3 format=3 uid="uid://tnh0kdgebdw6"]
 
+[ext_resource type="PackedScene" uid="uid://2levb08fmifs" path="res://weapon resources/bullet.tscn" id="1_ku6y7"]
 [ext_resource type="Script" path="res://weapon_resource.gd" id="1_q5r14"]
 
 [resource]
@@ -18,4 +19,5 @@ Auto_fire = false
 Weapon_range = 2000
 Damage = 1
 Type = 2
+Projectile_To_Load = ExtResource("1_ku6y7")
 Projectile_Velocity = 100

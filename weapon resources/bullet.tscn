@@ -1,10 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://2levb08fmifs"]
+[gd_scene load_steps=7 format=3 uid="uid://2levb08fmifs"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_x4v0m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e73ec"]
 resource_name = "yellow"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.998274, 0.894448, 0.505969, 1)
+albedo_color = Color(0.992157, 0.952941, 0.152941, 1)
 metallic = 1.0
+emission_enabled = true
+emission = Color(0.815686, 0.745098, 0, 1)
+emission_energy_multiplier = 16.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mginy"]
 resource_name = "pink"
@@ -62,9 +67,31 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ublxs")
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8fkj7"]
+radius = 0.0316312
+height = 0.436152
+
 [node name="Bullet" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 5
+mass = 0.1
+continuous_cd = true
+max_contacts_reported = 10
+contact_monitor = true
+script = ExtResource("1_x4v0m")
 
 [node name="foamBulletB2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(2.2, 0, 0, 0, -9.61651e-08, 2.2, 0, -2.2, -9.61651e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_23yf0")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_8fkj7")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

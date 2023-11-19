@@ -11,6 +11,8 @@ material = SubResource("StandardMaterial3D_uxt8d")
 [sub_resource type="BoxShape3D" id="BoxShape3D_mk2uk"]
 
 [node name="Box1" type="RigidBody3D" groups=["Target"]]
+collision_layer = 4
+collision_mask = 7
 freeze_mode = 1
 script = ExtResource("1_hyh6y")
 

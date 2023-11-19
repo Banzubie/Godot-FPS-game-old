@@ -94,7 +94,7 @@ func shoot():
 				HITSCAN: 
 					Hitscan_Collision(Camera_Collision)
 				PROJECTILE:
-					pass
+					Launch_Projectile(Camera_Collision)
 	else:
 		reload()
 	
@@ -146,6 +146,14 @@ func Hitscan_Damage(Collider):
 	if Collider.is_in_group("Target") and Collider.has_method("Hit_sucessful"):
 		Collider.Hit_sucessful(Current_Weapon.Damage)
 		
+	
+func Launch_Projectile(Point: Vector3):
+	var Direction = (Point - Bullet_point.get_global_transform().origin).normalized()
+	var Projectile = Current_Weapon.Projectile_To_Load.instantiate()
+	
+	Bullet_point.add_child(Projectile)
+	Projectile.Damage = Current_Weapon.Damage
+	Projectile.set_linear_velocity(Direction*Current_Weapon.Projectile_Velocity)
 	
 	
 	
