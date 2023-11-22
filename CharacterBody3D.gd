@@ -14,6 +14,7 @@ var gravity = 10.5
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	$Head/SubViewportContainer/SubViewport.size = DisplayServer.window_get_size()
 	
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -23,9 +24,11 @@ func _input(event):
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, -1.5, 1.5)
+	%SubViewport.push_input(event)
 
 func _physics_process(delta):
 	# Add the gravity.
+	$Head/SubViewportContainer/SubViewport/guncam.global_transform = camera.global_transform
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 

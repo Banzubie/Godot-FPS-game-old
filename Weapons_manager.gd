@@ -41,10 +41,14 @@ func _input(event):
 		exit(Weapon_Stack[Weapon_Indicator])
 	
 	if event.is_action_pressed("Shoot"):
+		print("shooted")
 		shoot()
 		
 	if event.is_action_pressed("Reload"):
 		reload()
+
+func _gui_input(event):
+	print(event)
 
 func Initialize(_start_weapons: Array):
 	for weapon in _weapon_resources:
