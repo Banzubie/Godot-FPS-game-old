@@ -6,6 +6,7 @@ extends CanvasLayer
 
 
 func _on_weapons_manager_update_ammo(Ammo):
+	print(Ammo)
 	CurrentAmmoLabel.set_text(str(Ammo[0]) + ' / ' + str(Ammo[1]))
 
 

@@ -1,8 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://xjks5ln0fs4p"]
+[gd_scene load_steps=5 format=3 uid="uid://xjks5ln0fs4p"]
 
 [ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_pwl84"]
-[ext_resource type="Script" path="res://HUD.gd" id="2_csxt6"]
-[ext_resource type="Texture2D" uid="uid://bdfk2yvep8cnl" path="res://ex8erdhiq3d81.webp" id="3_kgs05"]
 [ext_resource type="PackedScene" uid="uid://bsd5ge00n1wpi" path="res://guncam.tscn" id="4_7kswm"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5yn2q"]
@@ -11,52 +9,6 @@
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_pwl84")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("2_csxt6")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Current Weapon:"
-
-[node name="CurrentWeapon" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Ammo:"
-
-[node name="Ammo" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-text = "Weapon Stack:"
-
-[node name="WeaponStack" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_kgs05")
-stretch_mode = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

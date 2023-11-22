@@ -1,9 +1,11 @@
-[gd_scene load_steps=40 format=3 uid="uid://bsd5ge00n1wpi"]
+[gd_scene load_steps=42 format=3 uid="uid://bsd5ge00n1wpi"]
 
 [ext_resource type="Script" path="res://Weapons_manager.gd" id="1_m7e0s"]
 [ext_resource type="Resource" uid="uid://tnh0kdgebdw6" path="res://weapon resources/blasterE.tres" id="2_vds18"]
 [ext_resource type="Resource" uid="uid://bv2jnbr6rxuly" path="res://weapon resources/blasterN.tres" id="3_rak7y"]
 [ext_resource type="Resource" uid="uid://bvao2lcy2uuxq" path="res://weapon resources/crossbow.tres" id="4_nnl1p"]
+[ext_resource type="Script" path="res://HUD.gd" id="5_rbsn8"]
+[ext_resource type="Texture2D" uid="uid://bdfk2yvep8cnl" path="res://ex8erdhiq3d81.webp" id="6_ymovq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpwmm"]
 resource_name = "dark"
@@ -1037,6 +1039,52 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49151, 0)
 cull_mask = 1047554
 current = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("5_rbsn8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Current Weapon:"
+
+[node name="CurrentWeapon" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Ammo:"
+
+[node name="Ammo" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Weapon Stack:"
+
+[node name="WeaponStack" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ymovq")
+stretch_mode = 3
+
 [node name="Weapons_manager" type="Node3D" parent="."]
 script = ExtResource("1_m7e0s")
 _weapon_resources = Array[Resource("res://weapon_resource.gd")]([ExtResource("2_vds18"), ExtResource("3_rak7y"), ExtResource("4_nnl1p")])
@@ -1088,4 +1136,7 @@ libraries = {
 "": SubResource("AnimationLibrary_lqmqn")
 }
 
+[connection signal="Update_Ammo" from="Weapons_manager" to="CanvasLayer" method="_on_weapons_manager_update_ammo"]
+[connection signal="Update_Weapon_Stack" from="Weapons_manager" to="CanvasLayer" method="_on_weapons_manager_update_weapon_stack"]
+[connection signal="Weapon_Changed" from="Weapons_manager" to="CanvasLayer" method="_on_weapons_manager_weapon_changed"]
 [connection signal="animation_finished" from="Weapons_manager/FPS_rig/AnimationPlayer" to="Weapons_manager" method="_on_animation_player_animation_finished"]

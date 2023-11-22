@@ -41,14 +41,10 @@ func _input(event):
 		exit(Weapon_Stack[Weapon_Indicator])
 	
 	if event.is_action_pressed("Shoot"):
-		print("shooted")
 		shoot()
 		
 	if event.is_action_pressed("Reload"):
 		reload()
-
-func _gui_input(event):
-	print(event)
 
 func Initialize(_start_weapons: Array):
 	for weapon in _weapon_resources:
@@ -170,3 +166,5 @@ func Remove_Exclusion(Projectile_RID):
 	Collision_Exclusion.erase(Projectile_RID)
 	
 	
+
+
