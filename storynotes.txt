@@ -1,0 +1,73 @@
+Player:
+	vampire hunter/monster slayer, van hellsing type dude
+	Priest? Think alexander anderson hellsing - can use more cross themed weaponry, holy water as grenades etc, upgrades/new weapons picked up off dead priests
+
+wake up in dungeon/corpse disposal area/graveyard/crypt
+Hid inside coffin to sneak into castle, get dumped in crypt area
+
+gotta kill head vamp by ascending his tower/castle/fortress
+
+for enemy variety make a ball/event/fancy gathering
+ - Fae in the gardens
+ - werewolves in the huntsmans hall
+ - necromancers in alchemy lab? graveyard?
+ - witches somewhere?
+ - vamps obviously in the final climb
+
+Wake up in graveyard(necro) > forest/huntsmans hall(werewolves) > Gardens(fae) > tower(vamps)
+
+Weapons: maybes 6-7 in total?
+	broadsword - melee, secondary is charged attack, mobs light on fire when killed with charged
+	speed/dual cross bow - secondary lets you split into dual for faster fire, less accuracy
+	revolver shotgun, grenade launcher secondary - has to be revolver to fit bola launcher underneath - bolas fly out, wrap around and explode
+	Pump action stake thrower, fires wooden stakes, zoom in sniper as secondary, pins enemies to walls 
+	flamethrower - slows player to walking speed while using, secondary grenade launcher
+	rocket launcher - normal fire, explodes rockets in air with secondary
+	BFG revolver - single shot heavy damage bullets penetrate and ricochet, secondary uses all 6 rounds to form cross, clears room
+
+Weapon pacing:
+start with broadsword, speed crossbow
+undead: pick up shotgun and holy water grenades, BFG in secret area
+werewolf: give BFG and stake thrower
+fae: flamethrower and rocket launcher
+vamp: sword upgrade, burns enemies on hit
+	
+	BANG
+	
+BANG	BANG 	BANG
+	
+	BANG
+	
+	BANG
+
+Boss fights:
+	Probably just vamp lord, depends on boss implementation difficulty
+
+Mob list:
+	Vamps: high society victorian look
+	Full Vampires - Caster/melee
+	Fledgling vamp - gunners
+	hulk bat/black knights - big melee
+	thralls - mobs
+	bats - flying caster
+
+	Werewolves: shamanistic tribal look
+	Hulk werewolf - big melee
+	shaman - rages nearby mobs
+	humans/werewolves - ranged gunners, transform when low?
+	ghosts/spirits - flying mob
+	wolves - mobs
+	
+	Fae: insectoid look, think berserk lost children arc
+	Sidhe - Ranged Spellcasters/ doubles nearby mob/ summons more?
+	troll/ogre - big melee
+	Fairy - Flying mob
+	Spider humanoid creature - gunner, shoots webs?
+	goblin/gremlin - mobs
+		
+	Undead: standard undead zombies
+	Necomancers - Ranged caster/ressurects dead mobs?
+	hulk Zombie/abom/frankenstein monster - big melee
+	Floating skulls - flying caster
+	skeleton - gunner
+	ghoul - mob
