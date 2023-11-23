@@ -22,7 +22,7 @@ Weapons: maybes 6-7 in total?
 	revolver shotgun, grenade launcher secondary - has to be revolver to fit bola launcher underneath - bolas fly out, wrap around and explode
 	Pump action stake thrower, fires wooden stakes, zoom in sniper as secondary, pins enemies to walls 
 	flamethrower - slows player to walking speed while using, secondary grenade launcher
-	rocket launcher - normal fire, explodes rockets in air with secondary
+	rocket launcher - shoots rockets, secondary slaps projectiles back at enemies - shaped like coffin
 	BFG revolver - single shot heavy damage bullets penetrate and ricochet, secondary uses all 6 rounds to form cross, clears room
 
 Weapon pacing:
