@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Weapon_Resource" load_steps=2 format=3 uid="uid://bv2jnbr6rxuly"]
 
-[ext_resource type="Script" path="res://weapon_resource.gd" id="1_h2gke"]
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_qs13b"]
 
 [resource]
-script = ExtResource("1_h2gke")
+script = ExtResource("1_qs13b")
 Weapon_name = "blasterN"
 Activate_anim = "blasterN Activate"
 Deactivate_anim = "blasterN Deactivate"
@@ -15,6 +15,7 @@ Reserve_ammo = 25
 Magazine = 25
 Max_Ammo = 50
 Auto_fire = true
-Type = 1
 Weapon_range = 2000
 Damage = 1
+Type = 1
+Projectile_Velocity = 0

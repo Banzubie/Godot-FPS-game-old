@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Weapon_Resource" load_steps=3 format=3 uid="uid://bvao2lcy2uuxq"]
 
-[ext_resource type="Script" path="res://weapon_resource.gd" id="1_dxajj"]
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_b7g8l"]
 [ext_resource type="PackedScene" uid="uid://2levb08fmifs" path="res://weapon resources/bullet.tscn" id="1_mq2ko"]
 
 [resource]
-script = ExtResource("1_dxajj")
+script = ExtResource("1_b7g8l")
 Weapon_name = "crossbow"
 Activate_anim = "crossbow activate"
 Deactivate_anim = "crossbow deactivate"
@@ -20,4 +20,4 @@ Weapon_range = 2000
 Damage = 2
 Type = 2
 Projectile_To_Load = ExtResource("1_mq2ko")
-Projectile_Velocity = 100
+Projectile_Velocity = 25

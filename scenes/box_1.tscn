@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cq7c48kyl5ga4"]
 
-[ext_resource type="Script" path="res://target.gd" id="1_hyh6y"]
+[ext_resource type="Script" path="res://scripts/target.gd" id="1_4hl6o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uxt8d"]
 albedo_color = Color(1, 0.184314, 0.309804, 1)
@@ -14,7 +14,7 @@ material = SubResource("StandardMaterial3D_uxt8d")
 collision_layer = 4
 collision_mask = 7
 freeze_mode = 1
-script = ExtResource("1_hyh6y")
+script = ExtResource("1_4hl6o")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_vqyei")

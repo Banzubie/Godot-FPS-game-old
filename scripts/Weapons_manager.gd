@@ -7,7 +7,7 @@ signal Update_Weapon_Stack
 @onready var Animation_Player = get_node("%AnimationPlayer")
 @onready var Bullet_point = get_node("%Bullet_point")
 
-var Debug_bullet = preload("res://bullet_debug.tscn")
+var Debug_bullet = preload("res://scenes/bullet_debug.tscn")
 
 var Current_Weapon = null
 

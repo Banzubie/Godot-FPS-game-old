@@ -1,7 +1,7 @@
 extends RigidBody3D
 
 var Damage: int = 0
-var Debug_bullet = preload("res://bullet_debug.tscn")
+var Debug_bullet = preload("res://scenes/bullet_debug.tscn")
 
 
 func _on_body_entered(body):

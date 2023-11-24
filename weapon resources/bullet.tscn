@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://2levb08fmifs"]
 
-[ext_resource type="Script" path="res://bullet.gd" id="1_x4v0m"]
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_kyoqd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e73ec"]
 resource_name = "yellow"
@@ -78,7 +78,7 @@ mass = 0.1
 continuous_cd = true
 max_contacts_reported = 10
 contact_monitor = true
-script = ExtResource("1_x4v0m")
+script = ExtResource("1_kyoqd")
 
 [node name="foamBulletB2" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.2, 0, 0, 0, -9.61651e-08, 2.2, 0, -2.2, -9.61651e-08, 0, 0, 0)

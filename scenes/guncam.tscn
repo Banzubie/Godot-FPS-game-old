@@ -1,11 +1,30 @@
-[gd_scene load_steps=42 format=3 uid="uid://bsd5ge00n1wpi"]
+[gd_scene load_steps=43 format=3 uid="uid://bsd5ge00n1wpi"]
 
-[ext_resource type="Script" path="res://Weapons_manager.gd" id="1_m7e0s"]
-[ext_resource type="Resource" uid="uid://tnh0kdgebdw6" path="res://weapon resources/blasterE.tres" id="2_vds18"]
+[ext_resource type="Script" path="res://scripts/HUD.gd" id="1_bxjwo"]
+[ext_resource type="Script" path="res://scripts/Weapons_manager.gd" id="3_3qwwu"]
 [ext_resource type="Resource" uid="uid://bv2jnbr6rxuly" path="res://weapon resources/blasterN.tres" id="3_rak7y"]
 [ext_resource type="Resource" uid="uid://bvao2lcy2uuxq" path="res://weapon resources/crossbow.tres" id="4_nnl1p"]
-[ext_resource type="Script" path="res://HUD.gd" id="5_rbsn8"]
-[ext_resource type="Texture2D" uid="uid://bdfk2yvep8cnl" path="res://ex8erdhiq3d81.webp" id="6_ymovq"]
+[ext_resource type="PackedScene" uid="uid://2levb08fmifs" path="res://weapon resources/bullet.tscn" id="5_drypy"]
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="6_ml1wa"]
+
+[sub_resource type="Resource" id="Resource_xohvl"]
+script = ExtResource("6_ml1wa")
+Weapon_name = "blasterE"
+Activate_anim = "blasterE activate"
+Deactivate_anim = "blasterE deactivate"
+Shoot_anim = "blasterE shoot"
+OOA_anim = "blasterE OOA"
+Reload_anim = "blasterE reload"
+Current_ammo = 5
+Reserve_ammo = 5
+Magazine = 5
+Max_Ammo = 15
+Auto_fire = false
+Weapon_range = 2000
+Damage = 1
+Type = 2
+Projectile_To_Load = ExtResource("5_drypy")
+Projectile_Velocity = 100
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpwmm"]
 resource_name = "dark"
@@ -34,7 +53,6 @@ metallic = 1.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wipj"]
 resource_name = "_defaultMat"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 metallic = 1.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4yxyf"]
@@ -162,7 +180,6 @@ metallic = 1.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnmn6"]
 resource_name = "_defaultMat"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 metallic = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m523t"]
@@ -472,6 +489,18 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("%Bullet_point:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.313959, -0.220272, -0.597364)]
 }
 
 [sub_resource type="Animation" id="Animation_crrja"]
@@ -917,6 +946,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%Bullet_point:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.313959, -0.220272, -0.597364)]
+}
 
 [sub_resource type="Animation" id="Animation_hw1gs"]
 resource_name = "crossbow deactivate"
@@ -1040,7 +1081,7 @@ cull_mask = 1047554
 current = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("5_rbsn8")
+script = ExtResource("1_bxjwo")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 offset_right = 40.0
@@ -1082,13 +1123,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_ymovq")
+size_flags_horizontal = 4
 stretch_mode = 3
 
 [node name="Weapons_manager" type="Node3D" parent="."]
-script = ExtResource("1_m7e0s")
-_weapon_resources = Array[Resource("res://weapon_resource.gd")]([ExtResource("2_vds18"), ExtResource("3_rak7y"), ExtResource("4_nnl1p")])
-Start_Weapons = Array[String](["blasterN", "blasterE", "crossbow"])
+script = ExtResource("3_3qwwu")
+_weapon_resources = Array[ExtResource("6_ml1wa")]([ExtResource("4_nnl1p"), ExtResource("3_rak7y"), SubResource("Resource_xohvl")])
+Start_Weapons = Array[String](["crossbow", "blasterN", "blasterE"])
 
 [node name="FPS_rig" type="Node3D" parent="Weapons_manager"]
 
@@ -1128,7 +1169,7 @@ skeleton = NodePath("")
 
 [node name="Bullet_point" type="Marker3D" parent="Weapons_manager/FPS_rig"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.198839, -0.1559, -0.671156)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.313959, -0.220272, -0.597364)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Weapons_manager/FPS_rig"]
 unique_name_in_owner = true
