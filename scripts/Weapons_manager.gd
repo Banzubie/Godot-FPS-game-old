@@ -45,6 +45,9 @@ func _input(event):
 		
 	if event.is_action_pressed("Reload"):
 		reload()
+	
+	if event.is_action_pressed("Alt fire"):
+		Animation_Player.play("crossbow split")
 
 func Initialize(_start_weapons: Array):
 	for weapon in _weapon_resources:
