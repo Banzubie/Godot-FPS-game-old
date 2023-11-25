@@ -68,7 +68,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ublxs")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_v35tc"]
-height = 0.460079
+height = 0.168517
 radius = 0.0520038
 
 [node name="Bullet" type="RigidBody3D"]

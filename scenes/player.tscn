@@ -3,23 +3,26 @@
 [ext_resource type="Script" path="res://scripts/CharacterBody3D.gd" id="1_xs3aj"]
 [ext_resource type="PackedScene" uid="uid://bsd5ge00n1wpi" path="res://scenes/guncam.tscn" id="4_7kswm"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_5yn2q"]
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qeup4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8van5"]
+radius = 0.496292
+height = 0.992796
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_xs3aj")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_5yn2q")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionStand" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_qeup4")
 
+[node name="CollisionCrouch" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_8van5")
+disabled = true
+
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49151, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.35)
@@ -41,3 +44,7 @@ render_target_update_mode = 4
 
 [node name="guncam" parent="Head/SubViewportContainer/SubViewport" instance=ExtResource("4_7kswm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.35)
+
+[node name="RayCastCrouch" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0163721, 0)
+target_position = Vector3(0, 2, 0)
