@@ -1,6 +1,7 @@
-[gd_scene load_steps=43 format=3 uid="uid://bsd5ge00n1wpi"]
+[gd_scene load_steps=44 format=3 uid="uid://bsd5ge00n1wpi"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_bxjwo"]
+[ext_resource type="Texture2D" uid="uid://3503kjd1x8e8" path="res://textures/crosshair.png" id="2_hqwh1"]
 [ext_resource type="Script" path="res://scripts/Weapons_manager.gd" id="3_3qwwu"]
 [ext_resource type="Resource" uid="uid://bv2jnbr6rxuly" path="res://weapon resources/blasterN.tres" id="3_rak7y"]
 [ext_resource type="Resource" uid="uid://bvao2lcy2uuxq" path="res://weapon resources/crossbow.tres" id="4_nnl1p"]
@@ -1124,6 +1125,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+texture = ExtResource("2_hqwh1")
 stretch_mode = 3
 
 [node name="Weapons_manager" type="Node3D" parent="."]

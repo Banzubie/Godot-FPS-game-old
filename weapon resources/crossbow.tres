@@ -20,4 +20,4 @@ Weapon_range = 2000
 Damage = 2
 Type = 2
 Projectile_To_Load = ExtResource("1_mq2ko")
-Projectile_Velocity = 25
+Projectile_Velocity = 100
