@@ -9,9 +9,13 @@ class_name Weapon_Resource
 @export var OOA_anim: String
 @export var Reload_anim: String
 
+#The amount you can shoot
 @export var Current_ammo: int
+#Ammo you reload from
 @export var Reserve_ammo: int
+#The amount you reload when you press reload
 @export var Magazine: int
+#Max ammo in reserve
 @export var Max_Ammo: int
 
 @export var Auto_fire: bool

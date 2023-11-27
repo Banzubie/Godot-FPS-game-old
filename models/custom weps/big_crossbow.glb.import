@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://drpmdir23ii1t"
-path="res://.godot/imported/blasterG.glb-79ab3556e01e5d836b56582053704b77.scn"
+uid="uid://badmi5wm02xlx"
+path="res://.godot/imported/big_crossbow.glb-202b17c8ef7a5dc65872ddba07c82b49.scn"
 
 [deps]
 
-source_file="res://models/weapons/blasterG.glb"
-dest_files=["res://.godot/imported/blasterG.glb-79ab3556e01e5d836b56582053704b77.scn"]
+source_file="res://models/custom weps/big_crossbow.glb"
+dest_files=["res://.godot/imported/big_crossbow.glb-202b17c8ef7a5dc65872ddba07c82b49.scn"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Weapon_Resource" load_steps=3 format=3 uid="uid://bvao2lcy2uuxq"]
 
+[ext_resource type="PackedScene" uid="uid://dbsj1sqfix4g6" path="res://weapon resources/arrow.tscn" id="1_6oqy2"]
 [ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_b7g8l"]
-[ext_resource type="PackedScene" uid="uid://2levb08fmifs" path="res://weapon resources/bullet.tscn" id="1_mq2ko"]
 
 [resource]
 script = ExtResource("1_b7g8l")
@@ -11,13 +11,13 @@ Deactivate_anim = "crossbow deactivate"
 Shoot_anim = "crossbow shoot"
 OOA_anim = "crossbow OOA"
 Reload_anim = "crossbow reload"
-Current_ammo = 5
-Reserve_ammo = 15
-Magazine = 5
-Max_Ammo = 30
-Auto_fire = false
+Current_ammo = 30
+Reserve_ammo = 60
+Magazine = 30
+Max_Ammo = 120
+Auto_fire = true
 Weapon_range = 2000
 Damage = 2
 Type = 2
-Projectile_To_Load = ExtResource("1_mq2ko")
-Projectile_Velocity = 100
+Projectile_To_Load = ExtResource("1_6oqy2")
+Projectile_Velocity = 75

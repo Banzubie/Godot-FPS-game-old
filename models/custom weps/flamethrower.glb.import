@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cnrbh6e3yehhy"
-path="res://.godot/imported/blasterH.glb-9854ed1efa512c3b452c7453ea8dc0d5.scn"
+uid="uid://d3q6f3vgmy5mu"
+path="res://.godot/imported/flamethrower.glb-e59b16218c455bcf16832aeb07b42b56.scn"
 
 [deps]
 
-source_file="res://models/weapons/blasterH.glb"
-dest_files=["res://.godot/imported/blasterH.glb-9854ed1efa512c3b452c7453ea8dc0d5.scn"]
+source_file="res://models/custom weps/flamethrower.glb"
+dest_files=["res://.godot/imported/flamethrower.glb-e59b16218c455bcf16832aeb07b42b56.scn"]
 
 [params]
 

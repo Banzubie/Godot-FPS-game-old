@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://car4j82mqgp7q"
-path="res://.godot/imported/blasterC.glb-64a6fe788d7d9e52afd1db2e26f524d1.scn"
+uid="uid://det568uc77olm"
+path="res://.godot/imported/rocket_coffin.glb-177853c9bd5411368a67d3e7d1ad1a8e.scn"
 
 [deps]
 
-source_file="res://models/weapons/blasterC.glb"
-dest_files=["res://.godot/imported/blasterC.glb-64a6fe788d7d9e52afd1db2e26f524d1.scn"]
+source_file="res://models/custom weps/rocket_coffin.glb"
+dest_files=["res://.godot/imported/rocket_coffin.glb-177853c9bd5411368a67d3e7d1ad1a8e.scn"]
 
 [params]
 
