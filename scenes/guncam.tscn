@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bsd5ge00n1wpi"]
+[gd_scene load_steps=71 format=3 uid="uid://bsd5ge00n1wpi"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_bxjwo"]
 [ext_resource type="Texture2D" uid="uid://3503kjd1x8e8" path="res://textures/crosshair.png" id="2_hqwh1"]
@@ -226,7 +226,6 @@ shadow_mesh = SubResource("ArrayMesh_gdlif")
 resource_name = "Material.001"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 metallic = 1.0
 roughness = 0.4
 
@@ -794,6 +793,78 @@ tracks/8/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("shotgun:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("shotgun:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.541314, -3.14159, 9.07812e-08)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("shotgun:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.247949, -0.258906, -0.0174271)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("big_crossbow:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.231553, -0.162752, -0.126302)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("big_crossbow:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("big_crossbow:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_1xo52"]
 resource_name = "crossbow OOA"
@@ -1143,6 +1214,346 @@ tracks/3/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_wbxgg"]
+resource_name = "shotgun activate"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("shotgun:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("shotgun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.541052, 3.14159, 0), Vector3(0, 3.14159, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("shotgun:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.247949, -0.258906, -0.0174271), Vector3(0.247949, -0.134852, -0.0174271)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%Bullet_point:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.254793, -0.138869, -0.484801)]
+}
+
+[sub_resource type="Animation" id="Animation_31yui"]
+resource_name = "shotgun deactivate"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("shotgun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.247949, -0.134852, -0.0174271), Vector3(0.247949, -0.397043, -0.0174271)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("shotgun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0.765554, 3.14159, -1.45119e-07)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("shotgun:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_2v2q1"]
+resource_name = "xbow deactivate"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("big_crossbow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.231553, -0.162752, -0.126302), Vector3(0.231553, -0.354521, -0.126302)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("big_crossbow:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.547283, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("big_crossbow:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_xron8"]
+resource_name = "xbow activate"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("big_crossbow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.231553, -0.357502, -0.126302), Vector3(0.231553, -0.162752, -0.126302)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("big_crossbow:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.642072, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("big_crossbow:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_v0a2d"]
+resource_name = "shotgun shoot"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("shotgun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0997908, 0.160177, 0.398651),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.247949, -0.134852, -0.0174271), Vector3(0.248, -0.135, 0.049), Vector3(0.247986, -0.13496, 0.125446), Vector3(0.247949, -0.134852, -0.0174271)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("shotgun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.100814, 0.160177, 0.398651),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(-0.085015, 3.14159, 1.28679e-08), Vector3(-0.30329, 3.14159, 4.7191e-08), Vector3(0, 3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gbyvh"]
+resource_name = "shotgun reload"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("shotgun:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26048, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(-3.14159, 3.14159, 0), Vector3(-6.26573, 3.14159, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("shotgun:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.247995, -0.134986, 0.0749139), Vector3(0.247995, -0.134986, 0.0749139)]
+}
+
+[sub_resource type="Animation" id="Animation_bfty7"]
+resource_name = "shotgun OOA"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("shotgun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.247949, -0.134852, -0.0174271), Vector3(0.247949, -0.134852, -0.0174271)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("shotgun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.160177, 0.260991, 0.36027, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0, 2.34049, 0), Vector3(0, 3.14159, 0), Vector3(0, 3.54651, 0), Vector3(0, 3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mggxm"]
+resource_name = "xbow shoot"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("big_crossbow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0358223, 0.222098, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.231553, -0.162752, -0.126302), Vector3(0.231553, -0.162752, -0.0975244), Vector3(0.231553, -0.162752, -0.103636), Vector3(0.231553, -0.162752, -0.126302)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("big_crossbow:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.104908, 0.221587, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0562869, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xws1y"]
+resource_name = "xbow reload"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("big_crossbow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.262527, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.231553, -0.162752, -0.126302), Vector3(0.231553, -0.271743, -0.126302), Vector3(0.231553, -0.162752, -0.126302)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("big_crossbow:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0726682, 0.425262, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.667239, 0.210634, 0.332664), Vector3(0.667239, 0.210634, 0.332664), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0n8cr"]
+resource_name = "xbow OOA"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("big_crossbow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.231553, -0.162752, -0.126302), Vector3(0.231553, -0.162752, -0.126302)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("big_crossbow:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.200093, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 3.14159, 0), Vector3(0, 6.28319, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lqmqn"]
 _data = {
 "RESET": SubResource("Animation_oc7gv"),
@@ -1151,7 +1562,17 @@ _data = {
 "crossbow deactivate": SubResource("Animation_hw1gs"),
 "crossbow reload": SubResource("Animation_wd68a"),
 "crossbow shoot": SubResource("Animation_qfjnk"),
-"crossbow split": SubResource("Animation_sac68")
+"crossbow split": SubResource("Animation_sac68"),
+"shotgun OOA": SubResource("Animation_bfty7"),
+"shotgun activate": SubResource("Animation_wbxgg"),
+"shotgun deactivate": SubResource("Animation_31yui"),
+"shotgun reload": SubResource("Animation_gbyvh"),
+"shotgun shoot": SubResource("Animation_v0a2d"),
+"xbow OOA": SubResource("Animation_0n8cr"),
+"xbow activate": SubResource("Animation_xron8"),
+"xbow deactivate": SubResource("Animation_2v2q1"),
+"xbow reload": SubResource("Animation_xws1y"),
+"xbow shoot": SubResource("Animation_mggxm")
 }
 
 [node name="guncam" type="Camera3D"]
@@ -1249,6 +1670,7 @@ mesh = SubResource("ArrayMesh_nmo7e")
 skeleton = NodePath("")
 
 [node name="shotgun" type="Node3D" parent="Weapons_manager/FPS_rig"]
+transform = Transform3D(-0.5, 6.48939e-09, -6.47041e-08, 3.89012e-08, 0.428516, -0.257631, 5.21098e-08, -0.257631, -0.428516, 0.247949, -0.258906, -0.0174271)
 visible = false
 
 [node name="Cube" type="MeshInstance3D" parent="Weapons_manager/FPS_rig/shotgun"]
@@ -1258,7 +1680,7 @@ mesh = SubResource("ArrayMesh_a0kxo")
 skeleton = NodePath("")
 
 [node name="big_crossbow" type="Node3D" parent="Weapons_manager/FPS_rig"]
-visible = false
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.231553, -0.162752, -0.126302)
 
 [node name="Cube" type="MeshInstance3D" parent="Weapons_manager/FPS_rig/big_crossbow"]
 transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 1.5, 0, 0, 0)
