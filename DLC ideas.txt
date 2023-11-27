@@ -1,0 +1,12 @@
+2 new zones, library and labs
+
+lovecraft cultists in library
+Fleshcrafters in labs
+
+cultists use magic, tentacles, etc
+
+Fleshcrafters make sewn together abominations, lots of lightning/mechanical weaponry
+
+weapons:
+	Lightning gun: rail gun primary, either chaining rail gun secondary or continuous beam
+	Book of madness: fires out homing "worms" that burrow into enemy heads (DoT weapon?), secondary charms an enemy after a few seconds to fight with player, head explodes when effect ends
