@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://bsd5ge00n1wpi"]
+[gd_scene load_steps=86 format=3 uid="uid://bsd5ge00n1wpi"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_bxjwo"]
 [ext_resource type="Texture2D" uid="uid://3503kjd1x8e8" path="res://textures/crosshair.png" id="2_hqwh1"]
@@ -841,6 +841,114 @@ tracks/12/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("flamethrower:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("flamethrower:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.296249, -0.198499, 0.729548)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("flamethrower:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.387515, 0, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("rocket_coffin:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.161043, -0.0714061, 0)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("rocket_coffin:rotation")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 1.5708)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("rocket_coffin:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("pistol:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.135884, -0.103779, -0.149789)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("pistol:rotation")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("pistol:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_1xo52"]
 resource_name = "crossbow OOA"
@@ -1190,6 +1298,34 @@ tracks/3/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_bfty7"]
+resource_name = "shotgun OOA"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("shotgun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.247949, -0.134852, -0.0174271), Vector3(0.247949, -0.134852, -0.0174271)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("shotgun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.160177, 0.260991, 0.36027, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0, 2.34049, 0), Vector3(0, 3.14159, 0), Vector3(0, 3.54651, 0), Vector3(0, 3.14159, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_wbxgg"]
 resource_name = "shotgun activate"
 length = 0.5
@@ -1282,8 +1418,64 @@ tracks/2/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_2v2q1"]
-resource_name = "xbow deactivate"
+[sub_resource type="Animation" id="Animation_gbyvh"]
+resource_name = "shotgun reload"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("shotgun:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26048, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(-3.14159, 3.14159, 0), Vector3(-6.26573, 3.14159, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("shotgun:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.247995, -0.134986, 0.0749139), Vector3(0.247995, -0.134986, 0.0749139)]
+}
+
+[sub_resource type="Animation" id="Animation_v0a2d"]
+resource_name = "shotgun shoot"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("shotgun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0997908, 0.160177, 0.398651),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.247949, -0.134852, -0.0174271), Vector3(0.248, -0.135, 0.049), Vector3(0.247986, -0.13496, 0.125446), Vector3(0.247949, -0.134852, -0.0174271)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("shotgun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.100814, 0.160177, 0.398651),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(-0.085015, 3.14159, 1.28679e-08), Vector3(-0.30329, 3.14159, 4.7191e-08), Vector3(0, 3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0n8cr"]
+resource_name = "xbow OOA"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1295,7 +1487,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.231553, -0.162752, -0.126302), Vector3(0.231553, -0.354521, -0.126302)]
+"values": [Vector3(0.231553, -0.162752, -0.126302), Vector3(0.231553, -0.162752, -0.126302)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1304,22 +1496,10 @@ tracks/1/path = NodePath("big_crossbow:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.200093, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.547283, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("big_crossbow:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"values": [Vector3(0, 0, 0), Vector3(0, 3.14159, 0), Vector3(0, 6.28319, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_xron8"]
@@ -1362,93 +1542,9 @@ tracks/2/keys = {
 "values": [false, true]
 }
 
-[sub_resource type="Animation" id="Animation_v0a2d"]
-resource_name = "shotgun shoot"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("shotgun:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0997908, 0.160177, 0.398651),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.247949, -0.134852, -0.0174271), Vector3(0.248, -0.135, 0.049), Vector3(0.247986, -0.13496, 0.125446), Vector3(0.247949, -0.134852, -0.0174271)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("shotgun:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.100814, 0.160177, 0.398651),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 3.14159, 0), Vector3(-0.085015, 3.14159, 1.28679e-08), Vector3(-0.30329, 3.14159, 4.7191e-08), Vector3(0, 3.14159, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_gbyvh"]
-resource_name = "shotgun reload"
+[sub_resource type="Animation" id="Animation_2v2q1"]
+resource_name = "xbow deactivate"
 length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("shotgun:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.26048, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 3.14159, 0), Vector3(-3.14159, 3.14159, 0), Vector3(-6.26573, 3.14159, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("shotgun:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.247995, -0.134986, 0.0749139), Vector3(0.247995, -0.134986, 0.0749139)]
-}
-
-[sub_resource type="Animation" id="Animation_bfty7"]
-resource_name = "shotgun OOA"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("shotgun:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.247949, -0.134852, -0.0174271), Vector3(0.247949, -0.134852, -0.0174271)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("shotgun:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.160177, 0.260991, 0.36027, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 3.14159, 0), Vector3(0, 2.34049, 0), Vector3(0, 3.14159, 0), Vector3(0, 3.54651, 0), Vector3(0, 3.14159, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_mggxm"]
-resource_name = "xbow shoot"
-length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1456,10 +1552,10 @@ tracks/0/path = NodePath("big_crossbow:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0358223, 0.222098, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.231553, -0.162752, -0.126302), Vector3(0.231553, -0.162752, -0.0975244), Vector3(0.231553, -0.162752, -0.103636), Vector3(0.231553, -0.162752, -0.126302)]
+"values": [Vector3(0.231553, -0.162752, -0.126302), Vector3(0.231553, -0.354521, -0.126302)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1468,10 +1564,22 @@ tracks/1/path = NodePath("big_crossbow:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.104908, 0.221587, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.0562869, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(-0.547283, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("big_crossbow:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_xws1y"]
@@ -1502,9 +1610,9 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0.667239, 0.210634, 0.332664), Vector3(0.667239, 0.210634, 0.332664), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_0n8cr"]
-resource_name = "xbow OOA"
-length = 0.5
+[sub_resource type="Animation" id="Animation_mggxm"]
+resource_name = "xbow shoot"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1512,10 +1620,10 @@ tracks/0/path = NodePath("big_crossbow:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.0358223, 0.222098, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.231553, -0.162752, -0.126302), Vector3(0.231553, -0.162752, -0.126302)]
+"values": [Vector3(0.231553, -0.162752, -0.126302), Vector3(0.231553, -0.162752, -0.0975244), Vector3(0.231553, -0.162752, -0.103636), Vector3(0.231553, -0.162752, -0.126302)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1524,10 +1632,466 @@ tracks/1/path = NodePath("big_crossbow:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.200093, 0.5),
+"times": PackedFloat32Array(0, 0.104908, 0.221587, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0562869, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b32b5"]
+resource_name = "flamethrower activate"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("flamethrower:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("flamethrower:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.296249, -0.198499, 0.729548), Vector3(0.296249, -0.198499, 0.729548)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("flamethrower:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.387515, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qhnmf"]
+resource_name = "flamethrower deactivate"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("flamethrower:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.296249, -0.198499, 0.729548), Vector3(0.296249, -0.198499, 0.729548)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("flamethrower:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.560757, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("flamethrower:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_w43cx"]
+resource_name = "flamethrower shoot"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("flamethrower:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.296249, -0.198499, 0.729548), Vector3(0.296249, -0.198499, 0.840611)]
+}
+
+[sub_resource type="Animation" id="Animation_saf4e"]
+resource_name = "flamethrower channel end"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("flamethrower:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.296249, -0.198499, 0.840611), Vector3(0.296, -0.198, 0.73)]
+}
+
+[sub_resource type="Animation" id="Animation_ancu3"]
+resource_name = "flamethrower channel"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("flamethrower:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.25664), Vector3(0, 0, 2.51327), Vector3(0, 0, 3.76991), Vector3(0, 0, 5.02655), Vector3(0, 0, 6.28319)]
+}
+
+[sub_resource type="Animation" id="Animation_wy4fq"]
+resource_name = "rocket activate"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rocket_coffin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.161043, -0.0714061, 0), Vector3(0.161043, -0.0714061, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rocket_coffin:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.77636e-15, -0.839468, 1.5708), Vector3(0, 0, 1.5708)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("rocket_coffin:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0145381),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_7aqr6"]
+resource_name = "rocket deactivate"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rocket_coffin:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.000511748, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1.5708), Vector3(1.77636e-15, -1.02987, 1.5708)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rocket_coffin:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.000511748, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.161043, -0.0714061, 0), Vector3(0.161043, -0.0714061, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("rocket_coffin:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.481043, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_wrlgh"]
+resource_name = "rocket shoot"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rocket_coffin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.140219, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 3.14159, 0), Vector3(0, 6.28319, 0)]
+"values": [Vector3(0.161043, -0.0714061, 0), Vector3(0.161043, -0.0714061, 0.0725716), Vector3(0.161043, -0.0714061, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rocket_coffin:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.100814, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1.5708), Vector3(0.163729, -4.50109e-16, 1.5708), Vector3(0, 0, 1.5708)]
+}
+
+[sub_resource type="Animation" id="Animation_tvsfr"]
+resource_name = "rocket reload"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rocket_coffin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.161043, -0.0714061, 0), Vector3(0.161043, -0.0966852, 0), Vector3(0.161043, -0.0246609, 0), Vector3(0.161043, -0.0714061, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rocket_coffin:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1.5708), Vector3(-0.235464, 0.263817, 1.50786), Vector3(-0.235464, 0.263817, 1.50786), Vector3(0, 0, 1.5708)]
+}
+
+[sub_resource type="Animation" id="Animation_qbl1y"]
+resource_name = "rocket OOA"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rocket_coffin:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1.5708), Vector3(3.14159, 0, 1.5708), Vector3(6.28319, 0, 1.5708)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rocket_coffin:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.161043, -0.0714061, 0), Vector3(0.161043, -0.0714061, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_df571"]
+resource_name = "pistol activate"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pistol:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.135884, -0.380161, -0.149789), Vector3(0.135884, -0.103779, -0.149789)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pistol:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-6.28319, 0, 0), Vector3(-1.39626, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pistol:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_p34u5"]
+resource_name = "pistol deactivate"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pistol:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.135884, -0.103779, -0.149789), Vector3(0.135884, -0.424881, -0.149789)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pistol:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.26905, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pistol:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_cbak8"]
+resource_name = "pistol shoot"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pistol:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0793209, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.135884, -0.103779, -0.149789), Vector3(0.135884, -0.103779, -0.135396), Vector3(0.135884, -0.103779, -0.149789)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pistol:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0598745, 0.200093, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.5044, 0, 0), Vector3(0.123133, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fcyy6"]
+resource_name = "pistol reload"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pistol:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.179112, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.135884, -0.103779, -0.149789), Vector3(0.135884, -0.130549, -0.149789), Vector3(0.135884, -0.103779, -0.149789)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pistol:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0322401, 0.426798, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.52568, 0, 0), Vector3(-1.52568, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3o02b"]
+resource_name = "pistol OOA"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pistol:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.135884, -0.103779, -0.149789), Vector3(0.135884, -0.103779, -0.149789)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pistol:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-6.28319, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lqmqn"]
@@ -1539,6 +2103,21 @@ _data = {
 "crossbow reload": SubResource("Animation_wd68a"),
 "crossbow shoot": SubResource("Animation_qfjnk"),
 "crossbow split": SubResource("Animation_sac68"),
+"flamethrower activate": SubResource("Animation_b32b5"),
+"flamethrower channel": SubResource("Animation_ancu3"),
+"flamethrower channel end": SubResource("Animation_saf4e"),
+"flamethrower deactivate": SubResource("Animation_qhnmf"),
+"flamethrower shoot": SubResource("Animation_w43cx"),
+"pistol OOA": SubResource("Animation_3o02b"),
+"pistol activate": SubResource("Animation_df571"),
+"pistol deactivate": SubResource("Animation_p34u5"),
+"pistol reload": SubResource("Animation_fcyy6"),
+"pistol shoot": SubResource("Animation_cbak8"),
+"rocket OOA": SubResource("Animation_qbl1y"),
+"rocket activate": SubResource("Animation_wy4fq"),
+"rocket deactivate": SubResource("Animation_7aqr6"),
+"rocket reload": SubResource("Animation_tvsfr"),
+"rocket shoot": SubResource("Animation_wrlgh"),
 "shotgun OOA": SubResource("Animation_bfty7"),
 "shotgun activate": SubResource("Animation_wbxgg"),
 "shotgun deactivate": SubResource("Animation_31yui"),
@@ -1646,7 +2225,7 @@ mesh = SubResource("ArrayMesh_nmo7e")
 skeleton = NodePath("")
 
 [node name="shotgun" type="Node3D" parent="Weapons_manager/FPS_rig"]
-transform = Transform3D(-0.5, 6.48939e-09, -6.47041e-08, 3.89012e-08, 0.428516, -0.257631, 5.21098e-08, -0.257631, -0.428516, 0.247949, -0.258906, -0.0174271)
+transform = Transform3D(-0.5, -6.07751e-07, -1.08637e-06, 3.89012e-08, 0.428516, -0.257631, 1.2442e-06, -0.257631, -0.428516, 0.247949, -0.258906, -0.0174271)
 visible = false
 
 [node name="Cube" type="MeshInstance3D" parent="Weapons_manager/FPS_rig/shotgun"]
@@ -1671,6 +2250,7 @@ mesh = SubResource("ArrayMesh_iju66")
 skeleton = NodePath("")
 
 [node name="flamethrower" type="Node3D" parent="Weapons_manager/FPS_rig"]
+transform = Transform3D(0.5, 0, 0, 0, 0.462925, 0.188945, 0, -0.188945, 0.462925, 0.296249, -0.198499, 0.729548)
 visible = false
 
 [node name="Cylinder" type="MeshInstance3D" parent="Weapons_manager/FPS_rig/flamethrower"]
@@ -1686,6 +2266,7 @@ mesh = SubResource("ArrayMesh_q083x")
 skeleton = NodePath("")
 
 [node name="rocket_coffin" type="Node3D" parent="Weapons_manager/FPS_rig"]
+transform = Transform3D(-1.09278e-08, -0.25, 0, 0.25, -1.09278e-08, 0, 0, 0, 0.25, 0.161043, -0.0714061, 0)
 visible = false
 
 [node name="Cube" type="MeshInstance3D" parent="Weapons_manager/FPS_rig/rocket_coffin"]
@@ -1737,7 +2318,7 @@ mesh = SubResource("ArrayMesh_cl26f")
 skeleton = NodePath("")
 
 [node name="pistol" type="Node3D" parent="Weapons_manager/FPS_rig"]
-visible = false
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.135884, -0.103779, -0.149789)
 
 [node name="Cube" type="MeshInstance3D" parent="Weapons_manager/FPS_rig/pistol"]
 layers = 2
