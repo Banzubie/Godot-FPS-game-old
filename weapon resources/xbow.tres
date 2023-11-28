@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Weapon_Resource" load_steps=3 format=3 uid="uid://cqfqaefkdg53c"]
+
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_522g5"]
+[ext_resource type="PackedScene" uid="uid://dbsj1sqfix4g6" path="res://weapon resources/arrow.tscn" id="1_aiutt"]
+
+[resource]
+script = ExtResource("1_522g5")
+Weapon_name = "big_crossbow"
+Activate_anim = "xbow activate"
+Deactivate_anim = "xbow deactivate"
+Shoot_anim = "xbow shoot"
+OOA_anim = "xbow OOA"
+Reload_anim = "xbow reload"
+Current_ammo = 1
+Reserve_ammo = 20
+Magazine = 1
+Max_Ammo = 20
+Auto_fire = false
+Weapon_range = 1000
+Damage = 5
+Type = 2
+Projectile_To_Load = ExtResource("1_aiutt")
+Projectile_Velocity = 100

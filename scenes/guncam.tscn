@@ -1,9 +1,13 @@
-[gd_scene load_steps=86 format=3 uid="uid://bsd5ge00n1wpi"]
+[gd_scene load_steps=90 format=3 uid="uid://bsd5ge00n1wpi"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_bxjwo"]
 [ext_resource type="Texture2D" uid="uid://3503kjd1x8e8" path="res://textures/crosshair.png" id="2_hqwh1"]
 [ext_resource type="Script" path="res://scripts/Weapons_manager.gd" id="3_3qwwu"]
 [ext_resource type="Resource" uid="uid://bvao2lcy2uuxq" path="res://weapon resources/crossbow.tres" id="4_nnl1p"]
+[ext_resource type="Resource" uid="uid://cbwi4qvkdg61m" path="res://weapon resources/pistol.tres" id="5_3nmyf"]
+[ext_resource type="Resource" uid="uid://df06torafxggs" path="res://weapon resources/rocket.tres" id="6_8ncrm"]
+[ext_resource type="Resource" uid="uid://djyuvulk27jht" path="res://weapon resources/shotgun.tres" id="7_6k63s"]
+[ext_resource type="Resource" uid="uid://cqfqaefkdg53c" path="res://weapon resources/xbow.tres" id="8_8m6di"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ep4li"]
 resource_name = "Material"
@@ -2184,8 +2188,8 @@ stretch_mode = 3
 
 [node name="Weapons_manager" type="Node3D" parent="."]
 script = ExtResource("3_3qwwu")
-_weapon_resources = Array[Resource("res://scripts/weapon_resource.gd")]([ExtResource("4_nnl1p")])
-Start_Weapons = Array[String](["crossbow"])
+_weapon_resources = Array[Resource("res://scripts/weapon_resource.gd")]([ExtResource("4_nnl1p"), ExtResource("5_3nmyf"), ExtResource("6_8ncrm"), ExtResource("7_6k63s"), ExtResource("8_8m6di")])
+Start_Weapons = Array[String](["crossbow", "pistol", "rocket_coffin", "shotgun", "big_crossbow"])
 
 [node name="FPS_rig" type="Node3D" parent="Weapons_manager"]
 
