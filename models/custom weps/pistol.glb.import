@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cpt115iqkaehc"
-path="res://.godot/imported/blasterM.glb-ae805f375a685d6191eaf2c1a0b4fe31.scn"
+uid="uid://bnnj3voa8yrsb"
+path="res://.godot/imported/pistol.glb-1c2e817c04fbd31f06929640e250b7b5.scn"
 
 [deps]
 
-source_file="res://models/weapons/blasterM.glb"
-dest_files=["res://.godot/imported/blasterM.glb-ae805f375a685d6191eaf2c1a0b4fe31.scn"]
+source_file="res://models/custom weps/pistol.glb"
+dest_files=["res://.godot/imported/pistol.glb-1c2e817c04fbd31f06929640e250b7b5.scn"]
 
 [params]
 

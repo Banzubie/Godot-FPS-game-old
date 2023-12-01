@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Weapon_Resource" load_steps=3 format=3 uid="uid://cbwi4qvkdg61m"]
+
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_71cnn"]
+[ext_resource type="PackedScene" uid="uid://2levb08fmifs" path="res://weapon resources/bullet.tscn" id="1_xt38a"]
+
+[resource]
+script = ExtResource("1_71cnn")
+Weapon_name = "pistol"
+Activate_anim = "pistol activate"
+Deactivate_anim = "pistol deactivate"
+Shoot_anim = "pistol shoot"
+OOA_anim = "pistol OOA"
+Reload_anim = "pistol reload"
+Current_ammo = 6
+Reserve_ammo = 12
+Magazine = 6
+Max_Ammo = 18
+Auto_fire = false
+Weapon_range = 1000
+Damage = 20
+Type = 2
+Projectile_To_Load = ExtResource("1_xt38a")
+Projectile_Velocity = 100

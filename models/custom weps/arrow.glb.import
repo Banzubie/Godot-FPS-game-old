@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ebpvtlurq4fc"
-path="res://.godot/imported/blasterI.glb-a68dc90af0144018ff49d5c699ca3795.scn"
+uid="uid://dkwa3a37p52ga"
+path="res://.godot/imported/arrow.glb-83a89814a1c76cddff3011a050c7d5c5.scn"
 
 [deps]
 
-source_file="res://models/weapons/blasterI.glb"
-dest_files=["res://.godot/imported/blasterI.glb-a68dc90af0144018ff49d5c699ca3795.scn"]
+source_file="res://models/custom weps/arrow.glb"
+dest_files=["res://.godot/imported/arrow.glb-83a89814a1c76cddff3011a050c7d5c5.scn"]
 
 [params]
 
