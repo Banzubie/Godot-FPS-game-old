@@ -881,7 +881,7 @@ tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
@@ -989,7 +989,7 @@ tracks/21/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_1xo52"]
@@ -1383,6 +1383,7 @@ tracks/2/keys = {
 [sub_resource type="Animation" id="Animation_ancu3"]
 resource_name = "flamethrower channel"
 length = 0.5
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2278,6 +2279,7 @@ skeleton = NodePath("")
 
 [node name="big_crossbow" type="Node3D" parent="Weapons_manager/FPS_rig"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.231553, -0.162752, -0.126302)
+visible = false
 
 [node name="Cube" type="MeshInstance3D" parent="Weapons_manager/FPS_rig/big_crossbow"]
 transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 1.5, 0, 0, 0)
@@ -2361,6 +2363,7 @@ skeleton = NodePath("")
 
 [node name="pistol" type="Node3D" parent="Weapons_manager/FPS_rig"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.135884, -0.103779, -0.149789)
+visible = false
 
 [node name="Cube" type="MeshInstance3D" parent="Weapons_manager/FPS_rig/pistol"]
 layers = 2
