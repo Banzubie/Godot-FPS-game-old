@@ -92,7 +92,6 @@ func shoot():
 		if !Animation_Player.is_playing():
 			Animation_Player.play(Current_Weapon.Shoot_anim)
 			Current_Weapon.Current_ammo -= 1
-			emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Reserve_ammo])
 			var Camera_Collision = Get_Camera_Collison()
 			match Current_Weapon.Type:
 				NULL:
@@ -102,7 +101,10 @@ func shoot():
 				PROJECTILE:
 					Launch_Projectile(Camera_Collision)
 					if double_cross:
+						await get_tree().create_timer(.2).timeout
+						Current_Weapon.Current_ammo -= 1
 						Launch_Projectile_split(Camera_Collision)
+			emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Reserve_ammo])
 	else:
 		reload()
 		

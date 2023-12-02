@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const NORM_SPEED = 7.0
+const NORM_SPEED = 10.0
 const JUMP_VELOCITY = 5.5
 const SENSITIVITY = 0.003
 const CROUCH_SPEED = 4.5

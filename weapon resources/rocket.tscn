@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://dwsqnndr2korm"]
+
+[ext_resource type="Script" path="res://scripts/Rocket.gd" id="1_2rgpc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aoqnc"]
+height = 2.548
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kinq2"]
+albedo_color = Color(0.364706, 0.364706, 0.364706, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_we5j1"]
+material = SubResource("StandardMaterial3D_kinq2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eagrk"]
+albedo_color = Color(1, 0.141176, 0.117647, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_dy20t"]
+material = SubResource("StandardMaterial3D_eagrk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hlkhu"]
+initial_velocity_min = 0.5
+initial_velocity_max = 0.5
+angular_velocity_max = 5.0
+gravity = Vector3(0, 0, -7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7mfd"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.439216, 0.0235294, 1)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_jav62"]
+material = SubResource("StandardMaterial3D_j7mfd")
+size = Vector2(0.1, 0.1)
+
+[node name="Rocket" type="RigidBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+top_level = true
+collision_layer = 4
+collision_mask = 5
+mass = 0.2
+gravity_scale = 0.0
+continuous_cd = true
+max_contacts_reported = 10
+contact_monitor = true
+script = ExtResource("1_2rgpc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0, 0, 0.5, 0.0131908, 1.19209e-07, 0.0017426)
+shape = SubResource("CapsuleShape3D_aoqnc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.75498e-09, -0.200291, 0, 0.200291, -8.75498e-09, 0, 0, 0, 0.200291, 0, 0, 0)
+mesh = SubResource("CylinderMesh_we5j1")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.74228e-09, 0.2, -8.74228e-09, 0, -8.74228e-09, -0.2, -0.2, -8.74228e-09, 3.82137e-16, 0.300737, 0, 0)
+mesh = SubResource("PrismMesh_dy20t")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.185224, 0, 8.0964e-09)
+layers = 16
+amount = 50
+lifetime = 0.5
+randomness = 1.0
+visibility_aabb = AABB(-0.851342, -0.270956, -0.374774, 1.70268, 0.541912, 0.749547)
+trail_lifetime = 1.45
+process_material = SubResource("ParticleProcessMaterial_hlkhu")
+draw_pass_1 = SubResource("QuadMesh_jav62")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
