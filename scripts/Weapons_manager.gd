@@ -6,10 +6,12 @@ signal Update_Weapon_Stack
 
 @onready var Animation_Player = get_node("%AnimationPlayer")
 @onready var Bullet_point = get_node("%Bullet_point")
+@onready var Bullet_point2 = get_node("%Bullet_point2")
 
 var Debug_bullet = preload("res://scenes/bullet_debug.tscn")
 
 var Current_Weapon = null
+var double_cross = false
 
 var Weapon_Stack = []
 
@@ -47,8 +49,8 @@ func _input(event):
 		reload()
 	
 	if event.is_action_pressed("Alt fire"):
-		Animation_Player.play("crossbow split")
-
+		alt_fire()
+	
 func Initialize(_start_weapons: Array):
 	for weapon in _weapon_resources:
 		Weapon_List[weapon.Weapon_name] = weapon
@@ -71,12 +73,11 @@ func exit(_next_weapon: String):
 			Animation_Player.play(Current_Weapon.Deactivate_anim)
 			Next_Weapon = _next_weapon
 	
-
 func Change_Weapon(weapon_name: String):
+	double_cross = false
 	Current_Weapon = Weapon_List[weapon_name]
 	Next_Weapon = ''
 	enter()
-
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == Current_Weapon.Deactivate_anim:
@@ -100,9 +101,25 @@ func shoot():
 					Hitscan_Collision(Camera_Collision)
 				PROJECTILE:
 					Launch_Projectile(Camera_Collision)
+					if double_cross:
+						Launch_Projectile_split(Camera_Collision)
 	else:
 		reload()
-	
+		
+func alt_fire():
+	match Current_Weapon.Weapon_name:
+		NULL:
+			print("No weapon")
+		"crossbow":
+			if !double_cross:
+				double_cross = true
+				Animation_Player.queue("crossbow_split_activate")
+				Current_Weapon.Shoot_anim = "crossbow split shoot"
+			else:
+				Animation_Player.queue("crossbow_split_deactivate")
+				Current_Weapon.Shoot_anim = "crossbow shoot"
+				double_cross = false
+
 func reload():
 	if Current_Weapon.Current_ammo == Current_Weapon.Magazine:
 		return
@@ -115,7 +132,6 @@ func reload():
 			emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Reserve_ammo])
 		else:
 			Animation_Player.play(Current_Weapon.OOA_anim)
-	
 	
 func Get_Camera_Collison()->Vector3:
 	var camera = get_viewport().get_camera_3d()
@@ -152,7 +168,6 @@ func Hitscan_Damage(Collider, Direction, Position):
 	if Collider.is_in_group("Target") and Collider.has_method("Hit_sucessful"):
 		Collider.Hit_sucessful(Current_Weapon.Damage, Direction, Position)
 		
-	
 func Launch_Projectile(Point: Vector3):
 	var Direction = (Point - Bullet_point.get_global_transform().origin).normalized()
 	var Projectile = Current_Weapon.Projectile_To_Load.instantiate()
@@ -165,9 +180,20 @@ func Launch_Projectile(Point: Vector3):
 	Projectile.Damage = Current_Weapon.Damage
 	Projectile.set_linear_velocity(Direction*Current_Weapon.Projectile_Velocity)
 	
+func Launch_Projectile_split(Point: Vector3):
+	var Direction = (Point - Bullet_point2.get_global_transform().origin).normalized()
+	var Projectile = Current_Weapon.Projectile_To_Load.instantiate()
+	
+	var Projectile_RID = Projectile.get_rid()
+	Collision_Exclusion.push_back(Projectile_RID)
+	
+	Projectile.tree_exited.connect(Remove_Exclusion.bind(Projectile.get_rid()))
+	Bullet_point2.add_child(Projectile)
+	Projectile.Damage = Current_Weapon.Damage
+	Projectile.set_linear_velocity(Direction*Current_Weapon.Projectile_Velocity)
+	
 func Remove_Exclusion(Projectile_RID):
 	Collision_Exclusion.erase(Projectile_RID)
-	
 	
 
 

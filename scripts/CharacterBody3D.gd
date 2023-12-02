@@ -27,7 +27,6 @@ func _input(event):
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, -1.5, 1.5)
-	%SubViewport.push_input(event)
 
 func _physics_process(delta):
 	# Add the gravity.
