@@ -1,21 +1,14 @@
-[gd_resource type="Resource" script_class="Weapon_Resource" load_steps=2 format=3 uid="uid://bma5lgk1pdpbf"]
+[gd_resource type="Resource" script_class="Melee_Resource" load_steps=2 format=3 uid="uid://cegsw8q3vhclj"]
 
-[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_nydsf"]
+[ext_resource type="Script" path="res://scripts/melee_resource.gd" id="1_wrajl"]
 
 [resource]
-script = ExtResource("1_nydsf")
-Weapon_name = ""
-Activate_anim = ""
-Deactivate_anim = ""
-Shoot_anim = ""
-OOA_anim = ""
-Reload_anim = ""
-Current_ammo = 0
-Reserve_ammo = 0
-Magazine = 0
-Max_Ammo = 0
-Auto_fire = false
-Weapon_range = 0
-Damage = 0
-Type = null
-Projectile_Velocity = 0
+script = ExtResource("1_wrajl")
+Weapon_name = "sword"
+Activate_anim = "sword activate"
+Deactivate_anim = "sword deactivate"
+Shoot_anim = "sword attack"
+Auto_fire = true
+Weapon_range = 2
+Damage = 1
+Type = 1

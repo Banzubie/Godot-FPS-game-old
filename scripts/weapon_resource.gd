@@ -7,7 +7,6 @@ class_name Weapon_Resource
 @export var Deactivate_anim: String
 @export var Shoot_anim: String
 @export var OOA_anim: String
-@export var Reload_anim: String
 
 #The amount you can shoot
 @export var Current_ammo: int

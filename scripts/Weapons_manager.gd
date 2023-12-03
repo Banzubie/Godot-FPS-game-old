@@ -22,6 +22,7 @@ var Next_Weapon: String
 var Weapon_List = {}
 
 @export var _weapon_resources: Array[Weapon_Resource]
+@export var _melee_resources: Array[Melee_Resource]
 
 
 @export var Start_Weapons: Array[String]
@@ -49,6 +50,9 @@ func _input(event):
 		alt_fire()
 	
 func Initialize(_start_weapons: Array):
+	for sword in _melee_resources:
+		print(sword)
+		Weapon_List[sword.Weapon_name] = sword
 	for weapon in _weapon_resources:
 		Weapon_List[weapon.Weapon_name] = weapon
 		
@@ -62,7 +66,8 @@ func Initialize(_start_weapons: Array):
 func enter():
 	Animation_Player.queue(Current_Weapon.Activate_anim)
 	emit_signal("Weapon_Changed", Current_Weapon.Weapon_name)
-	emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Max_Ammo])
+	if Current_Weapon.Weapon_name != "sword":
+		emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Max_Ammo])
 
 func exit(_next_weapon: String):
 	if _next_weapon != Current_Weapon.Weapon_name:
@@ -85,7 +90,10 @@ func _on_animation_player_animation_finished(anim_name):
 			shoot()
 		
 func shoot():
-	if Current_Weapon.Current_ammo > 0:
+	if Current_Weapon.Weapon_name == "sword":
+		if !Animation_Player.is_playing():
+			Animation_Player.play(Current_Weapon.Shoot_anim)
+	elif Current_Weapon.Current_ammo > 0:
 		if !Animation_Player.is_playing():
 			Animation_Player.play(Current_Weapon.Shoot_anim)
 			Current_Weapon.Current_ammo -= 1
