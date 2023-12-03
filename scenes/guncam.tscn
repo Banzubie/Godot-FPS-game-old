@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://bsd5ge00n1wpi"]
+[gd_scene load_steps=74 format=3 uid="uid://bsd5ge00n1wpi"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_bxjwo"]
 [ext_resource type="Texture2D" uid="uid://3503kjd1x8e8" path="res://textures/crosshair.png" id="2_hqwh1"]
@@ -1075,58 +1075,6 @@ tracks/5/keys = {
 "values": [Vector3(0, 0, -3.14159), Vector3(-0.378736, 0, -3.14159)]
 }
 
-[sub_resource type="Animation" id="Animation_wd68a"]
-resource_name = "crossbow reload"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("hand_crossbow:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.314, -0.282, -0.331), Vector3(0.314, -0.36448, -0.331), Vector3(0.314, -0.436692, -0.331), Vector3(0.314, -0.282, -0.331)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("hand_crossbow:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.702321, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("hand_crossbow2:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.314892, -0.125644, -0.336149), Vector3(0.314892, -0.203033, -0.238221), Vector3(0.314892, -0.254805, -0.238221), Vector3(0.314892, -0.286912, -0.278236), Vector3(0.314892, -0.125644, -0.336149)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("hand_crossbow2:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 3.14159), Vector3(0.698132, 0, 3.14159), Vector3(0.361283, 0, 3.14159), Vector3(0, 0, 3.14159)]
-}
-
 [sub_resource type="Animation" id="Animation_qfjnk"]
 resource_name = "crossbow shoot"
 length = 0.3
@@ -1229,6 +1177,162 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xu33k"]
+resource_name = "crossbow split shoot"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand_crossbow2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.4, 0.6, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.309964, -0.282, -0.336), Vector3(-0.309964, -0.282, -0.304337), Vector3(-0.309964, -0.282, -0.336), Vector3(0.314892, -0.125644, -0.336149)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand_crossbow2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.5, 0.6, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, -3.14159)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hand_crossbow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.314, -0.282, -0.331), Vector3(0.314, -0.282, -0.291948), Vector3(0.314, -0.282, -0.331)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hand_crossbow:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gqpux"]
+resource_name = "crossbow_split_activate"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand_crossbow2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.314892, -0.125644, -0.336149), Vector3(-0.309964, -0.282, -0.336)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand_crossbow2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -3.14159), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hand_crossbow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.314, -0.282, -0.331)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hand_crossbow:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4k3iq"]
+resource_name = "crossbow_split_deactivate"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand_crossbow2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.309964, -0.282, -0.336), Vector3(0.314892, -0.125644, -0.336149)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand_crossbow2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -3.14159)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hand_crossbow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.314, -0.282, -0.331)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hand_crossbow:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_qbl1y"]
@@ -1337,34 +1441,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_tvsfr"]
-resource_name = "rocket reload"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("rocket_coffin:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.161043, -0.0714061, 0), Vector3(0.161043, -0.0966852, 0), Vector3(0.161043, -0.0246609, 0), Vector3(0.161043, -0.0714061, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("rocket_coffin:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 1.5708), Vector3(-0.235464, 0.263817, 1.50786), Vector3(-0.235464, 0.263817, 1.50786), Vector3(0, 0, 1.5708)]
 }
 
 [sub_resource type="Animation" id="Animation_wrlgh"]
@@ -1515,34 +1591,6 @@ tracks/2/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_gbyvh"]
-resource_name = "shotgun reload"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("shotgun:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.26048, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 3.14159, 0), Vector3(-3.14159, 3.14159, 0), Vector3(-6.26573, 3.14159, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("shotgun:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.247995, -0.134986, 0.0749139), Vector3(0.247995, -0.134986, 0.0749139)]
-}
-
 [sub_resource type="Animation" id="Animation_v0a2d"]
 resource_name = "shotgun shoot"
 length = 0.4
@@ -1679,34 +1727,6 @@ tracks/2/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_xws1y"]
-resource_name = "xbow reload"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("big_crossbow:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.262527, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.231553, -0.162752, -0.126302), Vector3(0.231553, -0.271743, -0.126302), Vector3(0.231553, -0.162752, -0.126302)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("big_crossbow:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0726682, 0.425262, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.667239, 0.210634, 0.332664), Vector3(0.667239, 0.210634, 0.332664), Vector3(0, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_mggxm"]
 resource_name = "xbow shoot"
 length = 0.3
@@ -1735,169 +1755,12 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0.0562869, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_gqpux"]
-resource_name = "crossbow_split_activate"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("hand_crossbow2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.314892, -0.125644, -0.336149), Vector3(-0.309964, -0.282, -0.336)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("hand_crossbow2:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, -3.14159), Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("hand_crossbow:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.314, -0.282, -0.331)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("hand_crossbow:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_4k3iq"]
-resource_name = "crossbow_split_deactivate"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("hand_crossbow2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.309964, -0.282, -0.336), Vector3(0.314892, -0.125644, -0.336149)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("hand_crossbow2:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, -3.14159)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("hand_crossbow:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.314, -0.282, -0.331)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("hand_crossbow:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_xu33k"]
-resource_name = "crossbow split shoot"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("hand_crossbow2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.3, 0.4, 0.6, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.309964, -0.282, -0.336), Vector3(-0.309964, -0.282, -0.304337), Vector3(-0.309964, -0.282, -0.336), Vector3(0.314892, -0.125644, -0.336149)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("hand_crossbow2:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.3, 0.5, 0.6, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, -3.14159)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("hand_crossbow:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.314, -0.282, -0.331), Vector3(0.314, -0.282, -0.291948), Vector3(0.314, -0.282, -0.331)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("hand_crossbow:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.1, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lqmqn"]
 _data = {
 "RESET": SubResource("Animation_oc7gv"),
 "crossbow OOA": SubResource("Animation_1xo52"),
 "crossbow activate": SubResource("Animation_fg8qc"),
 "crossbow deactivate": SubResource("Animation_hw1gs"),
-"crossbow reload": SubResource("Animation_wd68a"),
 "crossbow shoot": SubResource("Animation_qfjnk"),
 "crossbow split": SubResource("Animation_sac68"),
 "crossbow split shoot": SubResource("Animation_xu33k"),
@@ -1906,17 +1769,14 @@ _data = {
 "rocket OOA": SubResource("Animation_qbl1y"),
 "rocket activate": SubResource("Animation_wy4fq"),
 "rocket deactivate": SubResource("Animation_7aqr6"),
-"rocket reload": SubResource("Animation_tvsfr"),
 "rocket shoot": SubResource("Animation_wrlgh"),
 "shotgun OOA": SubResource("Animation_bfty7"),
 "shotgun activate": SubResource("Animation_wbxgg"),
 "shotgun deactivate": SubResource("Animation_31yui"),
-"shotgun reload": SubResource("Animation_gbyvh"),
 "shotgun shoot": SubResource("Animation_v0a2d"),
 "xbow OOA": SubResource("Animation_0n8cr"),
 "xbow activate": SubResource("Animation_xron8"),
 "xbow deactivate": SubResource("Animation_2v2q1"),
-"xbow reload": SubResource("Animation_xws1y"),
 "xbow shoot": SubResource("Animation_mggxm")
 }
 

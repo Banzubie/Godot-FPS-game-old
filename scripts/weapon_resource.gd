@@ -11,10 +11,6 @@ class_name Weapon_Resource
 
 #The amount you can shoot
 @export var Current_ammo: int
-#Ammo you reload from
-@export var Reserve_ammo: int
-#The amount you reload when you press reload
-@export var Magazine: int
 #Max ammo in reserve
 @export var Max_Ammo: int
 

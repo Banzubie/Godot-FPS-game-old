@@ -44,9 +44,6 @@ func _input(event):
 	
 	if event.is_action_pressed("Shoot"):
 		shoot()
-		
-	if event.is_action_pressed("Reload"):
-		reload()
 	
 	if event.is_action_pressed("Alt fire"):
 		alt_fire()
@@ -65,7 +62,7 @@ func Initialize(_start_weapons: Array):
 func enter():
 	Animation_Player.queue(Current_Weapon.Activate_anim)
 	emit_signal("Weapon_Changed", Current_Weapon.Weapon_name)
-	emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Reserve_ammo])
+	emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Max_Ammo])
 
 func exit(_next_weapon: String):
 	if _next_weapon != Current_Weapon.Weapon_name:
@@ -100,13 +97,13 @@ func shoot():
 					Hitscan_Collision(Camera_Collision)
 				PROJECTILE:
 					Launch_Projectile(Camera_Collision)
-					if double_cross:
+					if double_cross and Current_Weapon.Current_ammo > 0:
 						await get_tree().create_timer(.2).timeout
 						Current_Weapon.Current_ammo -= 1
 						Launch_Projectile_split(Camera_Collision)
-			emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Reserve_ammo])
+			emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Max_Ammo])
 	else:
-		reload()
+		Animation_Player.play(Current_Weapon.OOA_anim)
 		
 func alt_fire():
 	match Current_Weapon.Weapon_name:
