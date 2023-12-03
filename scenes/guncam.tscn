@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://bsd5ge00n1wpi"]
+[gd_scene load_steps=73 format=3 uid="uid://bsd5ge00n1wpi"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_bxjwo"]
 [ext_resource type="Texture2D" uid="uid://3503kjd1x8e8" path="res://textures/crosshair.png" id="2_hqwh1"]
@@ -50,6 +50,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_q5n1b")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hbob4"]
+points = PackedVector3Array(0.0945575, 1, 1, 0.0945575, 1, -1, -0.130384, 1, 1, 1, 0.0945575, 1, 1, 0.0945575, -1, -0.130384, 1, -1, -1, 0.130188, 1, 1, -0.107478, 1, 1, -0.107478, -1, -1, 0.130188, -1, -1, -0.151331, 1, 0.107283, -1, 1, 0.107283, -1, -1, -1, -0.151331, -1, -0.151331, -1, 1, -0.151331, -1, -1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j62id"]
 resource_name = "Material.001"
@@ -1879,6 +1882,16 @@ layers = 2
 mesh = SubResource("ArrayMesh_0hb8y")
 skeleton = NodePath("")
 
+[node name="SwordHitBox" type="Area3D" parent="Weapons_manager/FPS_rig/sword/Cube"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+collision_layer = 4
+collision_mask = 5
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Weapons_manager/FPS_rig/sword/Cube/SwordHitBox"]
+transform = Transform3D(1, -1.86265e-09, -1.19209e-07, 0, 1, 0, 9.31323e-10, 2.91038e-11, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_hbob4")
+
 [node name="Cylinder" type="MeshInstance3D" parent="Weapons_manager/FPS_rig/sword"]
 transform = Transform3D(0.05, 0, 0, 0, 0, -0.05, 0, 0.35, 0, 0, 0, 0.191199)
 layers = 2
@@ -1986,10 +1999,12 @@ skeleton = NodePath("")
 [node name="Bullet_point" type="Marker3D" parent="Weapons_manager/FPS_rig"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.313959, -0.220272, -0.597364)
+visible = false
 
 [node name="Bullet_point2" type="Marker3D" parent="Weapons_manager/FPS_rig"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.333125, -0.220272, -0.597364)
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Weapons_manager/FPS_rig"]
 unique_name_in_owner = true
@@ -2000,4 +2015,5 @@ libraries = {
 [connection signal="Update_Ammo" from="Weapons_manager" to="CanvasLayer" method="_on_weapons_manager_update_ammo"]
 [connection signal="Update_Weapon_Stack" from="Weapons_manager" to="CanvasLayer" method="_on_weapons_manager_update_weapon_stack"]
 [connection signal="Weapon_Changed" from="Weapons_manager" to="CanvasLayer" method="_on_weapons_manager_weapon_changed"]
+[connection signal="body_entered" from="Weapons_manager/FPS_rig/sword/Cube/SwordHitBox" to="Weapons_manager" method="_on_sword_hit_box_body_entered"]
 [connection signal="animation_finished" from="Weapons_manager/FPS_rig/AnimationPlayer" to="Weapons_manager" method="_on_animation_player_animation_finished"]

@@ -7,6 +7,7 @@ signal Update_Weapon_Stack
 @onready var Animation_Player = get_node("%AnimationPlayer")
 @onready var Bullet_point = get_node("%Bullet_point")
 @onready var Bullet_point2 = get_node("%Bullet_point2")
+@onready var SwordHitBox = $FPS_rig/sword/Cube/SwordHitBox
 
 var Debug_bullet = preload("res://scenes/bullet_debug.tscn")
 
@@ -51,7 +52,6 @@ func _input(event):
 	
 func Initialize(_start_weapons: Array):
 	for sword in _melee_resources:
-		print(sword)
 		Weapon_List[sword.Weapon_name] = sword
 	for weapon in _weapon_resources:
 		Weapon_List[weapon.Weapon_name] = weapon
@@ -82,6 +82,7 @@ func Change_Weapon(weapon_name: String):
 	enter()
 
 func _on_animation_player_animation_finished(anim_name):
+	SwordHitBox.monitoring = false
 	if anim_name == Current_Weapon.Deactivate_anim:
 		Change_Weapon(Next_Weapon)
 		
@@ -93,6 +94,7 @@ func shoot():
 	if Current_Weapon.Weapon_name == "sword":
 		if !Animation_Player.is_playing():
 			Animation_Player.play(Current_Weapon.Shoot_anim)
+			SwordHitBox.monitoring = true
 	elif Current_Weapon.Current_ammo > 0:
 		if !Animation_Player.is_playing():
 			Animation_Player.play(Current_Weapon.Shoot_anim)
@@ -127,18 +129,6 @@ func alt_fire():
 				Current_Weapon.Shoot_anim = "crossbow shoot"
 				double_cross = false
 
-func reload():
-	if Current_Weapon.Current_ammo == Current_Weapon.Magazine:
-		return
-	elif !Animation_Player.is_playing():
-		if Current_Weapon.Reserve_ammo != 0:
-			Animation_Player.play(Current_Weapon.Reload_anim)
-			var Reload_Amount = min(Current_Weapon.Magazine - Current_Weapon.Current_ammo, Current_Weapon.Magazine,Current_Weapon.Reserve_ammo)
-			Current_Weapon.Current_ammo += Reload_Amount
-			Current_Weapon.Reserve_ammo -= Reload_Amount
-			emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Reserve_ammo])
-		else:
-			Animation_Player.play(Current_Weapon.OOA_anim)
 	
 func Get_Camera_Collison()->Vector3:
 	var camera = get_viewport().get_camera_3d()
@@ -204,3 +194,8 @@ func Remove_Exclusion(Projectile_RID):
 	
 
 
+
+
+func _on_sword_hit_box_body_entered(body):
+	if body.is_in_group("Target") and body.has_method("Hit_sucessful"):
+		body.Hit_sucessful(Current_Weapon.Damage)
