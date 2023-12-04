@@ -1999,12 +1999,10 @@ skeleton = NodePath("")
 [node name="Bullet_point" type="Marker3D" parent="Weapons_manager/FPS_rig"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.313959, -0.220272, -0.597364)
-visible = false
 
 [node name="Bullet_point2" type="Marker3D" parent="Weapons_manager/FPS_rig"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.333125, -0.220272, -0.597364)
-visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Weapons_manager/FPS_rig"]
 unique_name_in_owner = true

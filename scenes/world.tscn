@@ -40,6 +40,7 @@ shadow_enabled = true
 environment = SubResource("Environment_w7uo1")
 
 [node name="Player" parent="." instance=ExtResource("1_ptsyr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.74995, 5.29686, 0)
 
 [node name="Static_targets" type="Node3D" parent="."]
 
