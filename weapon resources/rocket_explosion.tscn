@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://weapon resources/rocket_explosion.gd" id="1_34aux"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dkx8b"]
-radius = 1.0
+radius = 1.36175
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t3k82"]
 emission_shape = 2

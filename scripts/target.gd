@@ -11,4 +11,4 @@ func Hit_sucessful(damage, _Direction:= Vector3.ZERO, _Position:= Vector3.ZERO):
 		queue_free()
 		
 	if _Direction != Vector3.ZERO:
-		apply_impulse(_Direction,Hit_Position*.5)
+		apply_impulse(_Direction,Hit_Position*.2)
