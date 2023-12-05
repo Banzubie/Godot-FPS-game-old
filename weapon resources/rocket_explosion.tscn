@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://bc7m7q3sa443w"]
+
+[ext_resource type="Script" path="res://weapon resources/rocket_explosion.gd" id="1_34aux"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dkx8b"]
+radius = 1.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t3k82"]
+emission_shape = 2
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+spread = 90.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_066xl"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.254902, 0.254902, 0.254902, 1)
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_gl7ir"]
+material = SubResource("StandardMaterial3D_066xl")
+size = Vector2(0.5, 0.5)
+
+[node name="Rocket_Explosion" type="Area3D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_34aux")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_dkx8b")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+layers = 16
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+visibility_aabb = AABB(-2.144, -2.45388, -2.34641, 4.28799, 4.90775, 4.69281)
+process_material = SubResource("ParticleProcessMaterial_t3k82")
+draw_pass_1 = SubResource("QuadMesh_gl7ir")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

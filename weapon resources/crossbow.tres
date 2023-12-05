@@ -10,7 +10,6 @@ Activate_anim = "crossbow activate"
 Deactivate_anim = "crossbow deactivate"
 Shoot_anim = "crossbow shoot"
 OOA_anim = "crossbow OOA"
-Reload_anim = "crossbow reload"
 Current_ammo = 60
 Max_Ammo = 120
 Auto_fire = true
