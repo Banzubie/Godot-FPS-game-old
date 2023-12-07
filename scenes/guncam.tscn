@@ -1874,7 +1874,7 @@ Start_Weapons = Array[String](["sword", "crossbow", "rocket_coffin", "shotgun", 
 [node name="FPS_rig" type="Node3D" parent="Weapons_manager"]
 
 [node name="sword" type="Node3D" parent="Weapons_manager/FPS_rig"]
-transform = Transform3D(-0.0171179, 0.197921, -0.0231166, 0.0267775, -0.0207065, -0.197115, -0.197459, -0.019966, -0.0247269, 0.326636, -0.301627, -0.397367)
+transform = Transform3D(-0.0171179, 0.197921, -0.0231166, 0.0267775, -0.0207065, -0.197115, -0.197459, -0.0199659, -0.0247269, 0.326636, -0.301627, -0.397367)
 
 [node name="Cube" type="MeshInstance3D" parent="Weapons_manager/FPS_rig/sword"]
 transform = Transform3D(0.25, 0, 0, 0, 0.05, 0, 0, 0, 3.75, 0, 0, -3.87473)

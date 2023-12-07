@@ -2,13 +2,13 @@ extends CharacterBody3D
 
 
 const NORM_SPEED = 10.0
-const JUMP_VELOCITY = 5.5
+const JUMP_VELOCITY = 8
 const SENSITIVITY = 0.003
 const CROUCH_SPEED = 4.5
 
+var gravity = 20
 var speed = NORM_SPEED
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = 10.5
 @onready var collision_stand = $CollisionStand
 @onready var collision_crouch = $CollisionCrouch
 @onready var ray_cast_crouch = $RayCastCrouch
