@@ -8,8 +8,10 @@ signal Update_Weapon_Stack
 @onready var Bullet_point = get_node("%Bullet_point")
 @onready var Bullet_point2 = get_node("%Bullet_point2")
 @onready var SwordHitBox = $FPS_rig/sword/Cube/SwordHitBox
+@onready var shotCast = %"Shotgun cast"
 
 var Debug_bullet = preload("res://scenes/bullet_debug.tscn")
+var bullet_trail = preload("res://weapon resources/bullet_trail.tscn")
 
 var Current_Weapon = null
 var double_cross = false
@@ -28,12 +30,13 @@ var Weapon_List = {}
 
 @export var Start_Weapons: Array[String]
 
-enum {NULL, HITSCAN, PROJECTILE}
+enum {NULL, HITSCAN, PROJECTILE, BINARY, SHOTGUN }
 
 var Collision_Exclusion = []
 
 func _ready():
 	Initialize(Start_Weapons)
+	randomize()
 	
 func _input(event):
 	if event.is_action_pressed("Weapon_up"):
@@ -100,6 +103,7 @@ func shoot():
 			Animation_Player.play(Current_Weapon.Shoot_anim)
 			Current_Weapon.Current_ammo -= 1
 			var Camera_Collision = Get_Camera_Collison()
+			print(Current_Weapon.Type)
 			match Current_Weapon.Type:
 				NULL:
 					print("Weapon Type not chosen")
@@ -108,9 +112,12 @@ func shoot():
 				PROJECTILE:
 					Launch_Projectile(Camera_Collision)
 					if double_cross and Current_Weapon.Current_ammo > 0:
-						await get_tree().create_timer(.2).timeout
+						await get_tree().create_timer(.1).timeout
 						Current_Weapon.Current_ammo -= 1
 						Launch_Projectile_split(Camera_Collision)
+				SHOTGUN:
+					Fire_shotgun();
+					print("shoot")
 			emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Max_Ammo])
 	else:
 		Animation_Player.play(Current_Weapon.OOA_anim)
@@ -193,6 +200,23 @@ func Remove_Exclusion(Projectile_RID):
 	Collision_Exclusion.erase(Projectile_RID)
 	
 
+func Fire_shotgun():
+	var casted = shotCast
+	for i in range(8):
+		var copyCast = casted
+		var pellet = bullet_trail.instantiate()
+		casted.target_position.x = randf_range(-1, 1)
+		casted.target_position.y = randf_range(-1, 1)
+		casted.force_raycast_update()
+		if casted.is_colliding():
+			pellet.init(Bullet_point.global_position, casted.get_collision_point())
+			if casted.get_collider().is_in_group("Target") and casted.get_collider().has_method("Hit_sucessful"):
+				casted.get_collider().Hit_sucessful(Current_Weapon.Damage)
+		else:
+			pellet.init(Bullet_point.global_position, to_global(casted.target_position))
+		get_parent().get_parent().add_child(pellet)
+		casted = copyCast
+		
 
 
 

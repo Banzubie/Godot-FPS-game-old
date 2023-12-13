@@ -1103,7 +1103,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_xu33k"]
 resource_name = "crossbow split shoot"
-length = 0.6
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1111,7 +1111,7 @@ tracks/0/path = NodePath("hand_crossbow2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.3, 0.4, 0.6, 10),
+"times": PackedFloat32Array(0, 0.1, 0.3, 10),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.309964, -0.282, -0.336), Vector3(-0.309964, -0.282, -0.304337), Vector3(-0.309964, -0.282, -0.336), Vector3(0.314892, -0.125644, -0.336149)]
@@ -1123,7 +1123,7 @@ tracks/1/path = NodePath("hand_crossbow2:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.3, 0.5, 0.6, 10),
+"times": PackedFloat32Array(0, 0.2, 0.3, 10),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, -3.14159)]
@@ -2009,6 +2009,11 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_lqmqn")
 }
+
+[node name="Shotgun cast" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -4)
+collision_mask = 5
 
 [connection signal="Update_Ammo" from="Weapons_manager" to="CanvasLayer" method="_on_weapons_manager_update_ammo"]
 [connection signal="Update_Weapon_Stack" from="Weapons_manager" to="CanvasLayer" method="_on_weapons_manager_update_weapon_stack"]
