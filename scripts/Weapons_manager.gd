@@ -103,7 +103,6 @@ func shoot():
 			Animation_Player.play(Current_Weapon.Shoot_anim)
 			Current_Weapon.Current_ammo -= 1
 			var Camera_Collision = Get_Camera_Collison()
-			print(Current_Weapon.Type)
 			match Current_Weapon.Type:
 				NULL:
 					print("Weapon Type not chosen")
@@ -117,7 +116,6 @@ func shoot():
 						Launch_Projectile_split(Camera_Collision)
 				SHOTGUN:
 					Fire_shotgun();
-					print("shoot")
 			emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Max_Ammo])
 	else:
 		Animation_Player.play(Current_Weapon.OOA_anim)
