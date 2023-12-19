@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://xjks5ln0fs4p"]
+[gd_scene load_steps=6 format=3 uid="uid://xjks5ln0fs4p"]
 
 [ext_resource type="Script" path="res://scripts/CharacterBody3D.gd" id="1_xs3aj"]
+[ext_resource type="PackedScene" uid="uid://y3dv4rbxxv18" path="res://scenes/pause_menu.tscn" id="2_larp5"]
 [ext_resource type="PackedScene" uid="uid://bsd5ge00n1wpi" path="res://scenes/guncam.tscn" id="4_7kswm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qeup4"]
@@ -45,6 +46,10 @@ render_target_update_mode = 4
 
 [node name="guncam" parent="Head/SubViewportContainer/SubViewport" instance=ExtResource("4_7kswm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.35)
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_larp5")]
+visible = false
+mouse_default_cursor_shape = 2
 
 [node name="RayCastCrouch" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0163721, 0)
