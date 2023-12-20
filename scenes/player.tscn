@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://xjks5ln0fs4p"]
+[gd_scene load_steps=7 format=3 uid="uid://xjks5ln0fs4p"]
 
 [ext_resource type="Script" path="res://scripts/CharacterBody3D.gd" id="1_xs3aj"]
 [ext_resource type="PackedScene" uid="uid://y3dv4rbxxv18" path="res://scenes/pause_menu.tscn" id="2_larp5"]
@@ -9,6 +9,9 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8van5"]
 radius = 0.496292
 height = 0.992796
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mdcey"]
+radius = 0.543844
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_xs3aj")
@@ -54,3 +57,13 @@ mouse_default_cursor_shape = 2
 [node name="RayCastCrouch" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0163721, 0)
 target_position = Vector3(0, 2, 0)
+
+[node name="Pickup_detection" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup_detection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96243, 0)
+shape = SubResource("CylinderShape3D_mdcey")
+
+[connection signal="body_entered" from="Pickup_detection" to="." method="_on_pickup_detection_body_entered"]

@@ -221,3 +221,9 @@ func Fire_shotgun():
 func _on_sword_hit_box_body_entered(body):
 	if body.is_in_group("Target") and body.has_method("Hit_sucessful"):
 		body.Hit_sucessful(Current_Weapon.Damage)
+
+
+func Add_Ammo(Ammo: int):
+	print("Added ammo")
+	Current_Weapon.Current_ammo += Ammo
+	emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Max_Ammo])

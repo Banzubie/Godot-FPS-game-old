@@ -14,7 +14,6 @@ var speed = NORM_SPEED
 @onready var ray_cast_crouch = $RayCastCrouch
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
-
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$Head/SubViewportContainer/SubViewport.size = DisplayServer.window_get_size()
@@ -60,3 +59,7 @@ func _physics_process(delta):
 		velocity.z = 0.0
 
 	move_and_slide()
+
+func _on_pickup_detection_body_entered(_body):
+	$Head/SubViewportContainer/SubViewport/guncam/Weapons_manager.Add_Ammo(20)
+	_body.queue_free()

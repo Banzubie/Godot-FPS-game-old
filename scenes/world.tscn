@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://guskpte1s63u"]
+[gd_scene load_steps=12 format=3 uid="uid://guskpte1s63u"]
 
 [ext_resource type="PackedScene" uid="uid://xjks5ln0fs4p" path="res://scenes/player.tscn" id="1_ptsyr"]
 [ext_resource type="PackedScene" uid="uid://b6n8teecwbsy0" path="res://scenes/target.tscn" id="2_j8lin"]
 [ext_resource type="PackedScene" uid="uid://cq7c48kyl5ga4" path="res://scenes/box_1.tscn" id="3_p01sd"]
+[ext_resource type="PackedScene" uid="uid://dj62pudfep438" path="res://scenes/ammo_box.tscn" id="4_8d8o5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_go8o1"]
 sky_top_color = Color(0.317647, 0.411765, 0.803922, 1)
@@ -188,3 +189,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.960572, 1.80639, -13.7028)
 
 [node name="Box9" parent="Box targets" instance=ExtResource("3_p01sd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00507, 0.452267, -13.7028)
+
+[node name="Ammo_box" parent="." instance=ExtResource("4_8d8o5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 4)
+
+[node name="Ammo_box2" parent="." instance=ExtResource("4_8d8o5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -2)
+
+[node name="Ammo_box3" parent="." instance=ExtResource("4_8d8o5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -6)
+
+[node name="Ammo_box4" parent="." instance=ExtResource("4_8d8o5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -12)
