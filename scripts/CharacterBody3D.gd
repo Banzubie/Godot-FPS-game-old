@@ -14,6 +14,9 @@ var speed = NORM_SPEED
 @onready var ray_cast_crouch = $RayCastCrouch
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var hit_rect = $Head/Camera3D/Control/ColorRect
+
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$Head/SubViewportContainer/SubViewport.size = DisplayServer.window_get_size()
@@ -63,3 +66,12 @@ func _physics_process(delta):
 func _on_pickup_detection_body_entered(_body):
 	$Head/SubViewportContainer/SubViewport/guncam/Weapons_manager.Add_Ammo(20)
 	_body.queue_free()
+
+func hit(dir):
+	print(velocity)
+	velocity += dir * 15.0
+	print(velocity)
+	move_and_slide()
+	hit_rect.visible = true
+	await get_tree().create_timer(0.2).timeout
+	hit_rect.visible = false

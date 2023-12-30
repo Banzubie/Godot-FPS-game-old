@@ -38,3 +38,8 @@ func _process(delta):
 	
 func _target_in_range():
 	return global_position.distance_to(player.global_position) < ATTACK_RANGE
+	
+func _hit_finished():
+	if global_position.distance_to(player.global_position) < ATTACK_RANGE + 1.0:
+		var dir = global_position.direction_to(player.global_position)
+		player.hit(dir)

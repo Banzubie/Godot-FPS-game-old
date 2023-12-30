@@ -33,6 +33,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.35)
 cull_mask = 1048573
 current = true
 
+[node name="Control" type="Control" parent="Head/Camera3D"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect" type="ColorRect" parent="Head/Camera3D/Control"]
+visible = false
+layout_mode = 1
+offset_left = -64.0
+offset_top = -51.0
+offset_right = 1300.0
+offset_bottom = 757.0
+color = Color(0.992157, 0.0470588, 0, 0.341176)
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Head"]
 anchors_preset = 15
 anchor_right = 1.0
