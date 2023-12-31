@@ -1,10 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://guskpte1s63u"]
+[gd_scene load_steps=15 format=3 uid="uid://guskpte1s63u"]
 
 [ext_resource type="PackedScene" uid="uid://xjks5ln0fs4p" path="res://scenes/player.tscn" id="1_ptsyr"]
 [ext_resource type="PackedScene" uid="uid://b6n8teecwbsy0" path="res://scenes/target.tscn" id="2_j8lin"]
 [ext_resource type="PackedScene" uid="uid://cq7c48kyl5ga4" path="res://scenes/box_1.tscn" id="3_p01sd"]
 [ext_resource type="PackedScene" uid="uid://dj62pudfep438" path="res://scenes/ammo_box.tscn" id="4_8d8o5"]
-[ext_resource type="PackedScene" uid="uid://r7qr0ighbjjt" path="res://temp enemy/zombie_test.tscn" id="5_8l563"]
+[ext_resource type="Script" path="res://scenes/Area3D.gd" id="5_ddju2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_go8o1"]
 sky_top_color = Color(0.317647, 0.411765, 0.803922, 1)
@@ -36,6 +36,9 @@ albedo_color = Color(0.945098, 0.141176, 0.309804, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40tnq"]
 albedo_color = Color(0.513726, 0.941176, 0.384314, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_edcvg"]
+size = Vector3(5, 5, 5)
 
 [node name="World" type="Node3D"]
 
@@ -211,6 +214,27 @@ use_collision = true
 size = Vector3(40, 0.002, 40)
 metadata/_edit_group_ = true
 
-[node name="zombieTest" parent="NavigationRegion3D" instance=ExtResource("5_8l563")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.22813, 0.0010004, 13.0422)
-player_path = NodePath("../../Player")
+[node name="Area3D" type="Area3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7952, 0, 14.4774)
+script = ExtResource("5_ddju2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.58353, 0)
+shape = SubResource("BoxShape3D_edcvg")
+
+[node name="Spawn_Points" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="Spawn" type="Node3D" parent="NavigationRegion3D/Spawn_Points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95745, 0, -4.49246)
+
+[node name="Spawn2" type="Node3D" parent="NavigationRegion3D/Spawn_Points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86206, 0, 2.61994)
+
+[node name="Spawn3" type="Node3D" parent="NavigationRegion3D/Spawn_Points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.43269, 0, 2.44278)
+
+[node name="Spawn4" type="Node3D" parent="NavigationRegion3D/Spawn_Points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.01087, 0, -4.18812)
+
+[connection signal="area_entered" from="NavigationRegion3D/Area3D" to="NavigationRegion3D/Area3D" method="_on_area_entered"]
+[connection signal="body_entered" from="NavigationRegion3D/Area3D" to="NavigationRegion3D/Area3D" method="_on_body_entered"]

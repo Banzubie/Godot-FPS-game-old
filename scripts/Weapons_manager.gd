@@ -224,6 +224,7 @@ func _on_sword_hit_box_body_entered(body):
 
 
 func Add_Ammo(Ammo: int):
-	print("Added ammo")
+	if Current_Weapon.Weapon_name == "sword":
+		return
 	Current_Weapon.Current_ammo += Ammo
 	emit_signal("Update_Ammo", [Current_Weapon.Current_ammo, Current_Weapon.Max_Ammo])

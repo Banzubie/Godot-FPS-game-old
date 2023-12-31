@@ -1,14 +1,14 @@
 extends CharacterBody3D
 
-
+var Health = 10
 var player = null
 var state_machine
 
 const SPEED = 4.0
 const ATTACK_RANGE = 2.5
 
-@export var player_path : NodePath
-
+@export var player_path := "/root/World/Player"
+var ammo = load("res://scenes/ammo_box.tscn")
 @onready var nav_agent = $NavigationAgent3D
 @onready var anim_tree = $AnimationTree
 
@@ -43,3 +43,14 @@ func _hit_finished():
 	if global_position.distance_to(player.global_position) < ATTACK_RANGE + 1.0:
 		var dir = global_position.direction_to(player.global_position)
 		player.hit(dir)
+
+func Hit_sucessful(damage, _Direction:= Vector3.ZERO, _Position:= Vector3.ZERO):
+	var Hit_Position = _Position - get_global_transform().origin
+	Health -= damage
+	if Health <= 0:
+		anim_tree.set('parameters/conditions/die', true)
+		await get_tree().create_timer(1.5).timeout
+		var newAmmo = ammo.instantiate()
+		newAmmo.position = position
+		get_parent_node_3d().add_child(newAmmo)
+		queue_free()
