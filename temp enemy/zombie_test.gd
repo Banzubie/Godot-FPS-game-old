@@ -49,7 +49,7 @@ func Hit_sucessful(damage, _Direction:= Vector3.ZERO, _Position:= Vector3.ZERO):
 	Health -= damage
 	if Health <= 0:
 		anim_tree.set('parameters/conditions/die', true)
-		await get_tree().create_timer(1.5).timeout
+		await get_tree().create_timer(1.0).timeout
 		var newAmmo = ammo.instantiate()
 		newAmmo.position = position
 		get_parent_node_3d().add_child(newAmmo)
