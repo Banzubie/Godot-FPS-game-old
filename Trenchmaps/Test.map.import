@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://cdludokld7h1k"
+path="res://.godot/imported/Test.map-ea6b31b87744565b249f20f98714377d.tres"
+
+[deps]
+
+source_file="res://Trenchmaps/Test.map"
+dest_files=["res://.godot/imported/Test.map-ea6b31b87744565b249f20f98714377d.tres"]
+
+[params]
+
