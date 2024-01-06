@@ -9,7 +9,7 @@ const ATTACK_RANGE = 2.5
 
 @export var player_path := "/root/World/Player"
 var ammo = load("res://scenes/ammo_box.tscn")
-@onready var nav_agent = $NavigationRegion3D
+@onready var nav_agent = $NavigationAgent3D
 @onready var anim_tree = $AnimationTree
 
 func _ready():
