@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://bdm313ou25qa7"
+path="res://.godot/imported/temple.map-7b71900172071f6e74c10268ddcb3f68.tres"
+
+[deps]
+
+source_file="res://temple.map"
+dest_files=["res://.godot/imported/temple.map-7b71900172071f6e74c10268ddcb3f68.tres"]
+
+[params]
+
