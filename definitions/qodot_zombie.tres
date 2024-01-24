@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=4 format=3 uid="uid://cf7c42ntrrjo5"]
+
+[ext_resource type="PackedScene" uid="uid://r7qr0ighbjjt" path="res://temp enemy/zombie_test.tscn" id="1_n1r07"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="1_njt3h"]
+[ext_resource type="Script" path="res://temp enemy/zombie_test.gd" id="3_igd36"]
+
+[resource]
+script = ExtResource("1_njt3h")
+scene_file = ExtResource("1_n1r07")
+script_class = ExtResource("3_igd36")
+apply_rotation_on_map_build = true
+classname = "Testzombie"
+description = "its an enemy!"
+qodot_internal = false
+base_classes = Array[Resource]([])
+class_properties = {}
+class_property_descriptions = {}
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8)
+}
+node_class = ""
+transient_node = false
