@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://dnrs88p7pb2ap"
+path="res://.godot/imported/ruined_church.map-3b3acba92811a464418cfd3ba45d53ca.tres"
+
+[deps]
+
+source_file="res://ruined_church.map"
+dest_files=["res://.godot/imported/ruined_church.map-3b3acba92811a464418cfd3ba45d53ca.tres"]
+
+[params]
+
