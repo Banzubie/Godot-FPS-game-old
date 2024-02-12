@@ -7,7 +7,7 @@ signal Update_Weapon_Stack
 @onready var Animation_Player = get_node("%AnimationPlayer")
 @onready var Bullet_point = get_node("%Bullet_point")
 @onready var Bullet_point2 = get_node("%Bullet_point2")
-@onready var SwordHitBox = $FPS_rig/sword/Cube/SwordHitBox
+@onready var SwordHitBox = $FPS_rig/sword/SwordHitBox
 @onready var shotCast = %"Shotgun cast"
 
 var Debug_bullet = preload("res://scenes/bullet_debug.tscn")

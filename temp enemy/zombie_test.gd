@@ -7,7 +7,7 @@ var state_machine
 const SPEED = 4.0
 const ATTACK_RANGE = 2.5
 
-@export var player_path := "/root/World/NavigationRegion3D/QodotMap/entity_2_Player"
+@export var player_path := "/root/World/Player"
 var ammo = load("res://scenes/ammo_box.tscn")
 @onready var nav_agent = $NavigationAgent3D
 @onready var anim_tree = $AnimationTree
