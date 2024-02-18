@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://cegsw8q3vhclj" path="res://weapon resources/sword.tres" id="8_7b5na"]
 [ext_resource type="Resource" uid="uid://cqfqaefkdg53c" path="res://weapon resources/xbow.tres" id="8_8m6di"]
 [ext_resource type="PackedScene" uid="uid://d0oinbb4adwh" path="res://models/custom weps/Rapier4.glb" id="9_nw3ef"]
-[ext_resource type="PackedScene" uid="uid://de85hr1rpelqa" path="res://models/custom weps/Shotgun1.glb" id="10_3p6k4"]
+[ext_resource type="PackedScene" uid="uid://b4h7cx1qv0esg" path="res://models/custom weps/Shotgun4.glb" id="10_kn1yc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cdvpq"]
 size = Vector3(0.426331, 7.43366, 0.498474)
@@ -1802,25 +1802,31 @@ skeleton = NodePath("")
 transform = Transform3D(-0.5, -6.07751e-07, -1.08637e-06, 3.89012e-08, 0.428516, -0.257631, 1.2442e-06, -0.257631, -0.428516, 0.247949, -0.258906, -0.0174271)
 visible = false
 
-[node name="Shotgun1" parent="Weapons_manager/FPS_rig/shotgun" instance=ExtResource("10_3p6k4")]
-transform = Transform3D(-0.0499975, 0.000141941, 0.000476885, 0.000153221, 0.0499857, 0.0011862, -0.000473382, 0.0011876, -0.0499837, 0.197053, 0, 0.476789)
+[node name="Shotgun4" parent="Weapons_manager/FPS_rig/shotgun" instance=ExtResource("10_kn1yc")]
+transform = Transform3D(-0.0249996, -7.39349e-06, -0.00013437, -6.5311e-06, 0.0249995, -0.000160436, 0.000134414, -0.000160399, -0.0249991, 0.321391, 0.154706, 0.199353)
 
-[node name="Revolver" parent="Weapons_manager/FPS_rig/shotgun/Shotgun1" index="0"]
+[node name="Revolver" parent="Weapons_manager/FPS_rig/shotgun/Shotgun4" index="0"]
 layers = 2
 
-[node name="Front Sight" parent="Weapons_manager/FPS_rig/shotgun/Shotgun1" index="1"]
+[node name="Hammer" parent="Weapons_manager/FPS_rig/shotgun/Shotgun4" index="1"]
 layers = 2
 
-[node name="Hammer" parent="Weapons_manager/FPS_rig/shotgun/Shotgun1" index="2"]
+[node name="Lever" parent="Weapons_manager/FPS_rig/shotgun/Shotgun4" index="2"]
 layers = 2
 
-[node name="Revolver box" parent="Weapons_manager/FPS_rig/shotgun/Shotgun1" index="3"]
+[node name="Stock" parent="Weapons_manager/FPS_rig/shotgun/Shotgun4" index="3"]
 layers = 2
 
-[node name="Barrel" parent="Weapons_manager/FPS_rig/shotgun/Shotgun1" index="4"]
+[node name="Trigger" parent="Weapons_manager/FPS_rig/shotgun/Shotgun4" index="4"]
 layers = 2
 
-[node name="Stock" parent="Weapons_manager/FPS_rig/shotgun/Shotgun1" index="6"]
+[node name="Barrel bot" parent="Weapons_manager/FPS_rig/shotgun/Shotgun4" index="5"]
+layers = 2
+
+[node name="Rifle body" parent="Weapons_manager/FPS_rig/shotgun/Shotgun4" index="6"]
+layers = 2
+
+[node name="Cube_001" parent="Weapons_manager/FPS_rig/shotgun/Shotgun4" index="7"]
 layers = 2
 
 [node name="big_crossbow" type="Node3D" parent="Weapons_manager/FPS_rig"]
@@ -1917,4 +1923,4 @@ collision_mask = 5
 [connection signal="animation_finished" from="Weapons_manager/FPS_rig/AnimationPlayer" to="Weapons_manager" method="_on_animation_player_animation_finished"]
 
 [editable path="Weapons_manager/FPS_rig/sword/Rapier4"]
-[editable path="Weapons_manager/FPS_rig/shotgun/Shotgun1"]
+[editable path="Weapons_manager/FPS_rig/shotgun/Shotgun4"]
