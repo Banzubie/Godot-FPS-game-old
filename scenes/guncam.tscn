@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://bsd5ge00n1wpi"]
+[gd_scene load_steps=88 format=3 uid="uid://bsd5ge00n1wpi"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_bxjwo"]
 [ext_resource type="Texture2D" uid="uid://3503kjd1x8e8" path="res://textures/crosshair.png" id="2_hqwh1"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://cegsw8q3vhclj" path="res://weapon resources/sword.tres" id="8_7b5na"]
 [ext_resource type="Resource" uid="uid://cqfqaefkdg53c" path="res://weapon resources/xbow.tres" id="8_8m6di"]
 [ext_resource type="PackedScene" uid="uid://d0oinbb4adwh" path="res://models/custom weps/Rapier4.glb" id="9_nw3ef"]
+[ext_resource type="PackedScene" uid="uid://dq8q3ok4hnxgg" path="res://models/custom weps/crossbow8.glb" id="10_tq7gr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cdvpq"]
 size = Vector3(0.426331, 7.43366, 0.498474)
@@ -2133,9 +2134,34 @@ visible = false
 
 [node name="Cube" type="MeshInstance3D" parent="Weapons_manager/FPS_rig/hand_crossbow"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 layers = 2
 mesh = SubResource("ArrayMesh_nmo7e")
 skeleton = NodePath("")
+
+[node name="crossbow8" parent="Weapons_manager/FPS_rig/hand_crossbow" instance=ExtResource("10_tq7gr")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.00155973, 0.00129128, -0.00145292)
+
+[node name="Cube_008" parent="Weapons_manager/FPS_rig/hand_crossbow/crossbow8" index="0"]
+layers = 2
+
+[node name="Cylinder_001" parent="Weapons_manager/FPS_rig/hand_crossbow/crossbow8" index="1"]
+layers = 2
+
+[node name="Torus_001" parent="Weapons_manager/FPS_rig/hand_crossbow/crossbow8" index="2"]
+layers = 2
+
+[node name="Stock" parent="Weapons_manager/FPS_rig/hand_crossbow/crossbow8" index="3"]
+layers = 2
+
+[node name="Bow" parent="Weapons_manager/FPS_rig/hand_crossbow/crossbow8" index="4"]
+layers = 2
+
+[node name="String" parent="Weapons_manager/FPS_rig/hand_crossbow/crossbow8" index="5"]
+layers = 2
+
+[node name="Cube_009" parent="Weapons_manager/FPS_rig/hand_crossbow/crossbow8" index="6"]
+layers = 2
 
 [node name="hand_crossbow2" type="Node3D" parent="Weapons_manager/FPS_rig"]
 transform = Transform3D(-0.075, 1.90139e-07, -2.22044e-16, -1.6757e-07, -0.0660978, 0.0354413, 8.98502e-08, 0.0354413, 0.0660978, 0.358748, -0.41127, -0.398179)
@@ -2143,16 +2169,41 @@ visible = false
 
 [node name="Cube" type="MeshInstance3D" parent="Weapons_manager/FPS_rig/hand_crossbow2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 layers = 2
 mesh = SubResource("ArrayMesh_nmo7e")
 skeleton = NodePath("")
+
+[node name="crossbow8" parent="Weapons_manager/FPS_rig/hand_crossbow2" instance=ExtResource("10_tq7gr")]
+transform = Transform3D(3, 1.52111e-05, 0, -1.52111e-05, 3, 0, 0, 0, 3, 1.43051e-06, 0.499037, 0)
+
+[node name="Cube_008" parent="Weapons_manager/FPS_rig/hand_crossbow2/crossbow8" index="0"]
+layers = 2
+
+[node name="Cylinder_001" parent="Weapons_manager/FPS_rig/hand_crossbow2/crossbow8" index="1"]
+layers = 2
+
+[node name="Torus_001" parent="Weapons_manager/FPS_rig/hand_crossbow2/crossbow8" index="2"]
+layers = 2
+
+[node name="Stock" parent="Weapons_manager/FPS_rig/hand_crossbow2/crossbow8" index="3"]
+layers = 2
+
+[node name="Bow" parent="Weapons_manager/FPS_rig/hand_crossbow2/crossbow8" index="4"]
+layers = 2
+
+[node name="String" parent="Weapons_manager/FPS_rig/hand_crossbow2/crossbow8" index="5"]
+layers = 2
+
+[node name="Cube_009" parent="Weapons_manager/FPS_rig/hand_crossbow2/crossbow8" index="6"]
+layers = 2
 
 [node name="shotgun" type="Node3D" parent="Weapons_manager/FPS_rig"]
 transform = Transform3D(-0.5, -6.07751e-07, -1.08637e-06, 3.89012e-08, 0.428516, -0.257631, 1.2442e-06, -0.257631, -0.428516, 0.247949, -0.258906, -0.0174271)
 visible = false
 
 [node name="Shotgun5" type="Node3D" parent="Weapons_manager/FPS_rig/shotgun"]
-transform = Transform3D(0.993558, -1.7276e-07, 0.0566623, -0.00760108, 0.997748, 0.0333215, -0.113069, -0.067075, 0.49566, 0.186618, 0.09219, 0.0311304)
+transform = Transform3D(0.645813, -9.3528e-08, 0.0368304, -0.0049407, 0.648536, 0.0216589, -0.0734949, -0.0435987, 0.322179, 0.273544, 0.09219, 0.090668)
 
 [node name="Revolver" type="MeshInstance3D" parent="Weapons_manager/FPS_rig/shotgun/Shotgun5"]
 transform = Transform3D(-0.0424024, -9.49171e-09, 0.026496, 0.026496, -4.74585e-09, 0.0424024, -8.94072e-09, 0.0398111, 5.96047e-09, 0.000512628, -0.000388622, 0.500296)
@@ -2308,3 +2359,5 @@ collision_mask = 5
 [connection signal="animation_finished" from="Weapons_manager/FPS_rig/AnimationPlayer" to="Weapons_manager" method="_on_animation_player_animation_finished"]
 
 [editable path="Weapons_manager/FPS_rig/sword/Rapier4"]
+[editable path="Weapons_manager/FPS_rig/hand_crossbow/crossbow8"]
+[editable path="Weapons_manager/FPS_rig/hand_crossbow2/crossbow8"]
