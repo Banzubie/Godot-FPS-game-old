@@ -5,8 +5,8 @@ const NORM_SPEED = 10.0
 const JUMP_VELOCITY = 8
 const SENSITIVITY = 0.003
 const CROUCH_SPEED = 4.5
-const DASH_VELOCITY = 40.0
-const DASH_DURATION = 0.10
+const DASH_VELOCITY = 30.0
+const DASH_DURATION = 0.15
 
 var gravity = 20
 var speed = NORM_SPEED
@@ -79,9 +79,7 @@ func _on_pickup_detection_body_entered(_body):
 	_body.queue_free()
 
 func hit(dir):
-	print(velocity)
-	velocity += dir * 15.0
-	print(velocity)
+	velocity += dir * DASH_VELOCITY
 	move_and_slide()
 	hit_rect.visible = true
 	await get_tree().create_timer(0.2).timeout
