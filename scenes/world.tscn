@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://guskpte1s63u"]
+[gd_scene load_steps=16 format=3 uid="uid://guskpte1s63u"]
 
 [ext_resource type="PackedScene" uid="uid://xjks5ln0fs4p" path="res://scenes/player.tscn" id="1_ptsyr"]
 [ext_resource type="PackedScene" uid="uid://b6n8teecwbsy0" path="res://scenes/target.tscn" id="2_j8lin"]
@@ -39,6 +39,9 @@ albedo_color = Color(0.513726, 0.941176, 0.384314, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_edcvg"]
 size = Vector3(5, 5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00y4s"]
+albedo_color = Color(1, 0.0980392, 1, 1)
 
 [node name="World" type="Node3D"]
 
@@ -116,7 +119,7 @@ transform = Transform3D(-0.00495675, 0, 0.999988, 0, 1, 0, -0.999988, 0, -0.0049
 
 [node name="Box targets" type="Node3D" parent="."]
 
-[node name="Box1" parent="Box targets" instance=ExtResource("3_p01sd")]
+[node name="Box1" parent="Box targets" groups=["grapplePoint"] instance=ExtResource("3_p01sd")]
 transform = Transform3D(0.506892, 0, -0.86201, 0, 1, 0, 0.86201, 0, 0.506892, -5.02938, 3, -8.01681)
 
 [node name="Box2" parent="Box targets" instance=ExtResource("3_p01sd")]
@@ -235,6 +238,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.43269, 0, 2.44278)
 
 [node name="Spawn4" type="Node3D" parent="NavigationRegion3D/Spawn_Points"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.01087, 0, -4.18812)
+
+[node name="GrapplePoints" type="Node3D" parent="."]
+
+[node name="GrappleBox" type="CSGBox3D" parent="GrapplePoints" groups=["grapplePoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.66554, 12.4663, 11.4628)
+use_collision = true
+size = Vector3(2, 2, 2)
+material = SubResource("StandardMaterial3D_00y4s")
+
+[node name="GrappleBox2" type="CSGBox3D" parent="GrapplePoints" groups=["grapplePoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.66554, 12.4663, -9.48335)
+use_collision = true
+size = Vector3(2, 2, 2)
+material = SubResource("StandardMaterial3D_00y4s")
+
+[node name="GrappleBox3" type="CSGBox3D" parent="GrapplePoints" groups=["grapplePoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4761, 12.4663, -9.48335)
+use_collision = true
+size = Vector3(2, 2, 2)
+material = SubResource("StandardMaterial3D_00y4s")
+
+[node name="GrappleBox4" type="CSGBox3D" parent="GrapplePoints" groups=["grapplePoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4761, 12.4663, 11.2082)
+use_collision = true
+size = Vector3(2, 2, 2)
+material = SubResource("StandardMaterial3D_00y4s")
+
+[node name="GrappleBox5" type="CSGBox3D" parent="GrapplePoints" groups=["grapplePoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.112087, 25.8267, 7.21017)
+use_collision = true
+size = Vector3(2, 2, 2)
+material = SubResource("StandardMaterial3D_00y4s")
+
+[node name="GrappleBox6" type="CSGBox3D" parent="GrapplePoints" groups=["grapplePoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.112087, 36.3154, -5.8697)
+use_collision = true
+size = Vector3(2, 2, 2)
+material = SubResource("StandardMaterial3D_00y4s")
 
 [connection signal="area_entered" from="NavigationRegion3D/Area3D" to="NavigationRegion3D/Area3D" method="_on_area_entered"]
 [connection signal="body_entered" from="NavigationRegion3D/Area3D" to="NavigationRegion3D/Area3D" method="_on_body_entered"]
