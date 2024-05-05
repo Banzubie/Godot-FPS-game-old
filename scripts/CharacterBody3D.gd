@@ -5,9 +5,12 @@ const NORM_SPEED = 10.0
 const JUMP_VELOCITY = 8
 const SENSITIVITY = 0.003
 const CROUCH_SPEED = 4.5
+const DASH_VELOCITY = 40.0
+const DASH_DURATION = 0.10
 
 var gravity = 20
 var speed = NORM_SPEED
+var dashTime : float = 0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 @onready var collision_stand = $CollisionStand
 @onready var collision_crouch = $CollisionCrouch
@@ -35,7 +38,6 @@ func _physics_process(delta):
 	$Head/SubViewportContainer/SubViewport/guncam.global_transform = camera.global_transform
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -54,12 +56,21 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
 	else:
 		velocity.x = 0.0
 		velocity.z = 0.0
+	
+	if Input.is_action_just_pressed("dash"):
+		dashTime = DASH_DURATION
+		
+	if dashTime > 0:
+		velocity.x = direction.x * DASH_VELOCITY
+		velocity.z = direction.z * DASH_VELOCITY
+		dashTime -= delta
 
 	move_and_slide()
 
