@@ -11,6 +11,9 @@ const DASH_DURATION = 0.15
 var gravity = 20
 var speed = NORM_SPEED
 var dashTime : float = 0
+
+var hitTime : float = 0
+var hitDir : Vector3 = Vector3(0,0,0)
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 @onready var collision_stand = $CollisionStand
 @onready var collision_crouch = $CollisionCrouch
@@ -67,10 +70,18 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("dash"):
 		dashTime = DASH_DURATION
 		
+	if hitTime > 0:
+		velocity.x = hitDir.x * 10.0
+		velocity.z = hitDir.z * 10.0
+		if is_on_floor():
+			velocity.y = 2.5
+		hitTime -= delta
+		
 	if dashTime > 0:
 		velocity.x = direction.x * DASH_VELOCITY
 		velocity.z = direction.z * DASH_VELOCITY
 		dashTime -= delta
+	
 
 	move_and_slide()
 
@@ -79,8 +90,9 @@ func _on_pickup_detection_body_entered(_body):
 	_body.queue_free()
 
 func hit(dir):
-	velocity += dir * DASH_VELOCITY
-	move_and_slide()
+	if hitTime < 1:
+		hitDir = dir
+		hitTime = .05
 	hit_rect.visible = true
 	await get_tree().create_timer(0.2).timeout
 	hit_rect.visible = false
