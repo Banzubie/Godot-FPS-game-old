@@ -70,19 +70,18 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("dash"):
 		dashTime = DASH_DURATION
 		
-	if hitTime > 0:
-		velocity.x = hitDir.x * 10.0
-		velocity.z = hitDir.z * 10.0
-		if is_on_floor():
-			velocity.y = 2.5
-		hitTime -= delta
-		
 	if dashTime > 0:
 		velocity.x = direction.x * DASH_VELOCITY
 		velocity.z = direction.z * DASH_VELOCITY
 		dashTime -= delta
 	
-
+	if hitTime > 0:
+		if is_on_floor():
+			velocity.y = 2.5
+		velocity.x = hitDir.x * 10.0
+		velocity.z = hitDir.z * 10.0
+		hitTime -= delta
+		
 	move_and_slide()
 
 func _on_pickup_detection_body_entered(_body):
@@ -90,6 +89,8 @@ func _on_pickup_detection_body_entered(_body):
 	_body.queue_free()
 
 func hit(dir):
+	if dashTime > 0:
+		return
 	if hitTime < 1:
 		hitDir = dir
 		hitTime = .05
