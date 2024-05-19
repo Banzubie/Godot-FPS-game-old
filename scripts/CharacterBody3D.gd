@@ -7,6 +7,7 @@ const SENSITIVITY = 0.003
 const CROUCH_SPEED = 4.5
 const DASH_VELOCITY = 30.0
 const DASH_DURATION = 0.15
+const GRAPPLE_VELOCITY = 25.0
 
 var gravity = 20
 var speed = NORM_SPEED
@@ -119,8 +120,9 @@ func handleGrapple(dir):
 				grapplePosition = $Head/Camera3D/GrappleCast.get_collision_point()
 	if Input.is_action_pressed('grapple') and grapplePosition != Vector3(0,0,0):
 		dir = (grapplePosition - $Head.global_position).normalized()
+		speed = GRAPPLE_VELOCITY
 	else:
 		grapplePosition = Vector3(0,0,0)
-		
+		speed = NORM_SPEED
 	return dir
 		
