@@ -25,6 +25,10 @@ var hitDir : Vector3 = Vector3(0,0,0)
 @onready var camera = $Head/Camera3D
 @onready var hit_rect = $Head/Camera3D/Control/ColorRect
 
+@onready var Bullet_point = get_node("Head/SubViewportContainer/SubViewport/guncam/Weapons_manager/FPS_rig/Bullet_point2")
+
+const GRAPPLE_HOOK = preload("res://weapon resources/grappleHook.tscn")
+
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -113,12 +117,13 @@ func hit(dir):
 
 func handleGrapple(dir):
 	if Input.is_action_just_pressed('grapple'):
-		
-		if $Head/Camera3D/GrappleCast.is_colliding():
-			var collider = $Head/Camera3D/GrappleCast.get_collider()
-			
-			if collider.is_in_group('grapplePoint'):
-				grapplePosition = $Head/Camera3D/GrappleCast.get_collision_point()
+		var Camera_Collision = Get_Camera_Collison()
+		fireGrapple(Camera_Collision)
+		#if $Head/Camera3D/GrappleCast.is_colliding():
+			#var collider = $Head/Camera3D/GrappleCast.get_collider()
+			#
+			#if collider.is_in_group('grapplePoint'):
+				#grapplePosition = $Head/Camera3D/GrappleCast.get_collision_point()
 	if Input.is_action_pressed('grapple') and grapplePosition != Vector3(0,0,0):
 		dir = (grapplePosition - $Head.global_position).normalized()
 		speed = GRAPPLE_VELOCITY
@@ -127,3 +132,29 @@ func handleGrapple(dir):
 		speed = NORM_SPEED
 	return dir
 		
+func updateGrapple(Point: Vector3):
+	grapplePosition = Point
+
+func fireGrapple(Point: Vector3):
+	var Direction = (Point - Bullet_point.get_global_transform().origin).normalized()
+	var Projectile = GRAPPLE_HOOK.instantiate()
+	
+	Bullet_point.add_child(Projectile)
+	Projectile.set_linear_velocity(Direction*GRAPPLE_VELOCITY)
+
+func Get_Camera_Collison()->Vector3:
+	var camera = get_viewport().get_camera_3d()
+	var viewport = get_viewport().get_size()
+	
+	var Ray_Origin = camera.project_ray_origin(viewport/2)
+	var Ray_End = Ray_Origin + camera.project_ray_normal(viewport/2) * 25
+	var New_Intersection = PhysicsRayQueryParameters3D.create(Ray_Origin, Ray_End)
+	
+	var Intersection = get_world_3d().direct_space_state.intersect_ray(New_Intersection)
+	
+	
+	if not Intersection.is_empty():
+		var Col_Point = Intersection.position
+		return Col_Point
+	else:
+		return Ray_End

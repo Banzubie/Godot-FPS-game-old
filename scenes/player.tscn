@@ -70,6 +70,9 @@ render_target_update_mode = 4
 [node name="guncam" parent="Head/SubViewportContainer/SubViewport" instance=ExtResource("4_7kswm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.35)
 
+[node name="sword" parent="Head/SubViewportContainer/SubViewport/guncam/Weapons_manager/FPS_rig" index="0"]
+transform = Transform3D(-0.0171179, 0.197921, -0.0231166, 0.0267775, -0.0207065, -0.197115, -0.197459, -0.0199659, -0.0247269, 0.326636, -0.301627, -0.397367)
+
 [node name="PauseMenu" parent="." instance=ExtResource("2_larp5")]
 visible = false
 mouse_default_cursor_shape = 2
@@ -87,3 +90,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96243, 0)
 shape = SubResource("CylinderShape3D_mdcey")
 
 [connection signal="body_entered" from="Pickup_detection" to="." method="_on_pickup_detection_body_entered"]
+
+[editable path="Head/SubViewportContainer/SubViewport/guncam"]
+[editable path="Head/SubViewportContainer/SubViewport/guncam/Weapons_manager/FPS_rig/sword/Rapier4"]
