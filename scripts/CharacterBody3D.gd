@@ -14,6 +14,7 @@ var speed = NORM_SPEED
 var dashTime : float = 0
 var direction = Vector3(0,0,0)
 var grapplePosition : Vector3 = Vector3(0,0,0)
+@export var grappleActive = false
 
 var hitTime : float = 0
 var hitDir : Vector3 = Vector3(0,0,0)
@@ -119,11 +120,6 @@ func handleGrapple(dir):
 	if Input.is_action_just_pressed('grapple'):
 		var Camera_Collision = Get_Camera_Collison()
 		fireGrapple(Camera_Collision)
-		#if $Head/Camera3D/GrappleCast.is_colliding():
-			#var collider = $Head/Camera3D/GrappleCast.get_collider()
-			#
-			#if collider.is_in_group('grapplePoint'):
-				#grapplePosition = $Head/Camera3D/GrappleCast.get_collision_point()
 	if Input.is_action_pressed('grapple') and grapplePosition != Vector3(0,0,0):
 		dir = (grapplePosition - $Head.global_position).normalized()
 		speed = GRAPPLE_VELOCITY
@@ -136,6 +132,8 @@ func updateGrapple(Point: Vector3):
 	grapplePosition = Point
 
 func fireGrapple(Point: Vector3):
+	if grappleActive:
+		return
 	var Direction = (Point - Bullet_point.get_global_transform().origin).normalized()
 	var Projectile = GRAPPLE_HOOK.instantiate()
 	
@@ -151,7 +149,6 @@ func Get_Camera_Collison()->Vector3:
 	var New_Intersection = PhysicsRayQueryParameters3D.create(Ray_Origin, Ray_End)
 	
 	var Intersection = get_world_3d().direct_space_state.intersect_ray(New_Intersection)
-	
 	
 	if not Intersection.is_empty():
 		var Col_Point = Intersection.position
