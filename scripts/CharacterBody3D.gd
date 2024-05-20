@@ -113,6 +113,7 @@ func hit(dir):
 
 func handleGrapple(dir):
 	if Input.is_action_just_pressed('grapple'):
+		
 		if $Head/Camera3D/GrappleCast.is_colliding():
 			var collider = $Head/Camera3D/GrappleCast.get_collider()
 			

@@ -1,7 +1,6 @@
 extends Node3D
 
 var camera
-var maxDistance = 30
 @onready var reticle = $reticle
 @onready var ray_cast_3d = $RayCast3D
 @onready var player = $"../../../Player"
