@@ -1,3 +1,4 @@
+
 extends CharacterBody3D
 
 
@@ -138,7 +139,7 @@ func fireGrapple(Point: Vector3):
 	var Projectile = GRAPPLE_HOOK.instantiate()
 	
 	Bullet_point.add_child(Projectile)
-	Projectile.set_linear_velocity(Direction*GRAPPLE_VELOCITY)
+	Projectile.set_linear_velocity(Direction*GRAPPLE_VELOCITY *2)
 
 func Get_Camera_Collison()->Vector3:
 	var camera = get_viewport().get_camera_3d()

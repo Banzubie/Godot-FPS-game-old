@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cheg8d412b4a"
-path="res://.godot/imported/FLOOR_1A.PNG-66f8b6c48d0ba46ce8e39773907cf60d.ctex"
+path.s3tc="res://.godot/imported/FLOOR_1A.PNG-66f8b6c48d0ba46ce8e39773907cf60d.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/FLOOR_1A.PNG"
-dest_files=["res://.godot/imported/FLOOR_1A.PNG-66f8b6c48d0ba46ce8e39773907cf60d.ctex"]
+dest_files=["res://.godot/imported/FLOOR_1A.PNG-66f8b6c48d0ba46ce8e39773907cf60d.s3tc.ctex"]
 
 [params]
 

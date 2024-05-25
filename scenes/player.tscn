@@ -73,6 +73,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.35)
 [node name="sword" parent="Head/SubViewportContainer/SubViewport/guncam/Weapons_manager/FPS_rig" index="0"]
 transform = Transform3D(-0.0171179, 0.197921, -0.0231166, 0.0267775, -0.0207065, -0.197115, -0.197459, -0.0199659, -0.0247269, 0.326636, -0.301627, -0.397367)
 
+[node name="hand_crossbow" parent="Head/SubViewportContainer/SubViewport/guncam/Weapons_manager/FPS_rig" index="1"]
+transform = Transform3D(0.075, 0, 0, 0, 0.0660712, 0.0354909, 0, -0.0354909, 0.0660712, 0.358748, -0.520866, -0.338129)
+
+[node name="hand_crossbow2" parent="Head/SubViewportContainer/SubViewport/guncam/Weapons_manager/FPS_rig" index="2"]
+transform = Transform3D(-0.075, 1.90139e-07, -2.22044e-16, -1.6757e-07, -0.0660978, 0.0354413, 8.98502e-08, 0.0354413, 0.0660978, 0.358748, -0.41127, -0.398179)
+
+[node name="shotgun" parent="Head/SubViewportContainer/SubViewport/guncam/Weapons_manager/FPS_rig" index="3"]
+transform = Transform3D(-0.5, -6.07751e-07, -1.08637e-06, 3.89012e-08, 0.428516, -0.257631, 1.2442e-06, -0.257631, -0.428516, 0.247949, -0.258906, -0.0174271)
+
+[node name="rocket_coffin" parent="Head/SubViewportContainer/SubViewport/guncam/Weapons_manager/FPS_rig" index="5"]
+transform = Transform3D(-9.04998e-07, -0.25, 0, 0.25, -9.04998e-07, 0, 0, 0, 0.25, 0.161043, -0.0714061, 0)
+
 [node name="PauseMenu" parent="." instance=ExtResource("2_larp5")]
 visible = false
 mouse_default_cursor_shape = 2

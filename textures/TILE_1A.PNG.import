@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://darkpkjalj4pu"
-path="res://.godot/imported/TILE_1A.PNG-1d5b2ad37cdc04b679f4348dd87bf16c.ctex"
+path.s3tc="res://.godot/imported/TILE_1A.PNG-1d5b2ad37cdc04b679f4348dd87bf16c.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/TILE_1A.PNG"
-dest_files=["res://.godot/imported/TILE_1A.PNG-1d5b2ad37cdc04b679f4348dd87bf16c.ctex"]
+dest_files=["res://.godot/imported/TILE_1A.PNG-1d5b2ad37cdc04b679f4348dd87bf16c.s3tc.ctex"]
 
 [params]
 

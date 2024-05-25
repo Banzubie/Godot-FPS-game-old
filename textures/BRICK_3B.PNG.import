@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bn2c1fp7l24ef"
-path="res://.godot/imported/BRICK_3B.PNG-39c0c1b24171470d17452e0d95c1f2ec.ctex"
+path.s3tc="res://.godot/imported/BRICK_3B.PNG-39c0c1b24171470d17452e0d95c1f2ec.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/BRICK_3B.PNG"
-dest_files=["res://.godot/imported/BRICK_3B.PNG-39c0c1b24171470d17452e0d95c1f2ec.ctex"]
+dest_files=["res://.godot/imported/BRICK_3B.PNG-39c0c1b24171470d17452e0d95c1f2ec.s3tc.ctex"]
 
 [params]
 

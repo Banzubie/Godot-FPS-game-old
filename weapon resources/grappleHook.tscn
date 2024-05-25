@@ -70,7 +70,7 @@ mesh = SubResource("ArrayMesh_1cv0o")
 skeleton = NodePath("")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.76
+wait_time = 0.35
 one_shot = true
 autostart = true
 
